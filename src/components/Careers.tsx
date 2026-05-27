@@ -5,8 +5,7 @@ import { Section, SectionHeader } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { openRoles, site } from "@/lib/site";
 
-const inputClass =
-  "min-h-12 w-full rounded-xl border border-border bg-background px-4 text-base text-foreground placeholder:text-muted-light focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20";
+const inputClass = "field-input";
 
 export function Careers() {
   const [selectedRole, setSelectedRole] = useState<string>(openRoles[0].id);
@@ -38,7 +37,7 @@ export function Careers() {
       <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:gap-6">
         {openRoles.map((role, i) => (
           <Reveal key={role.id} delay={i * 40}>
-            <li className="flex h-full flex-col border border-border bg-surface-elevated p-6 sm:p-7">
+            <li className="surface-card flex h-full flex-col p-6 sm:p-7">
               <div className="flex flex-wrap items-start justify-between gap-2">
                 <h3 className="font-display text-lg font-bold text-foreground">{role.title}</h3>
                 <span className="text-xs font-semibold uppercase tracking-wider text-brand">

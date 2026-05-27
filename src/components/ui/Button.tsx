@@ -4,7 +4,7 @@ import { type ReactNode } from "react";
 type ButtonProps = {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "secondary" | "ghost" | "accent";
+  variant?: "primary" | "secondary" | "ghost" | "accent" | "outline-light";
   size?: "md" | "lg";
   className?: string;
   external?: boolean;
@@ -19,6 +19,8 @@ const variants = {
     "bg-transparent text-brand hover:bg-brand/6 active:bg-brand/10",
   accent:
     "bg-accent text-brand-dark hover:bg-accent-muted active:opacity-95",
+  "outline-light":
+    "bg-transparent text-white ring-1 ring-white/35 hover:bg-white/10 active:bg-white/15",
 };
 
 const sizes = {

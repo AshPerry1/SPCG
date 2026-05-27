@@ -6,35 +6,35 @@ import { services } from "@/lib/site";
 export function Services() {
   return (
     <Section id="services">
-      <div className="lg:grid lg:grid-cols-12 lg:gap-14">
+      <div className="lg:grid lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start">
           <SectionHeader
             eyebrow="Services"
-            title="One contractor for the full job."
+            title="One contractor from bid to keys."
             description="Permits, trades, inspections, and daily site leadership — you are not coordinating five different companies."
             align="left"
           />
         </div>
-        <ul className="mt-12 space-y-0 lg:col-span-8 lg:mt-0">
+        <ul className="mt-14 lg:col-span-8 lg:mt-0">
           {services.map((service, i) => (
             <Reveal key={service.title} delay={i * 50}>
-              <li className="group grid gap-6 border-t border-border py-10 first:border-t-0 first:pt-0 sm:grid-cols-[1fr_1.1fr] sm:items-center sm:gap-8">
-                <div className="relative aspect-[3/2] overflow-hidden sm:aspect-[4/3]">
+              <li className="group grid gap-8 border-t border-border py-12 first:border-t-0 first:pt-0 lg:grid-cols-2 lg:items-center lg:gap-12">
+                <div className="relative aspect-[5/4] overflow-hidden bg-surface lg:aspect-[4/3]">
                   <SiteImage
                     asset={service.image}
                     className="absolute inset-0"
-                    sizes="(max-width: 640px) 100vw, 40vw"
-                    rounded="rounded-sm"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    rounded=""
                   />
+                  <span className="absolute left-0 top-0 bg-brand px-3 py-2 font-display text-sm font-bold text-white">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
                 <div>
-                  <p className="font-display text-sm font-bold text-brand/80">
-                    {String(i + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="mt-2 font-display text-xl font-bold text-foreground sm:text-2xl">
+                  <h3 className="display-headline text-2xl text-foreground sm:text-[1.75rem]">
                     {service.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
+                  <p className="mt-4 text-base leading-relaxed text-muted">
                     {service.description}
                   </p>
                 </div>
