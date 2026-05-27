@@ -1,3 +1,4 @@
+import { publicAsset } from "@/lib/base-path";
 import type { ImageAsset } from "@/lib/images";
 
 export const site = {

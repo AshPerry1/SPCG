@@ -35,6 +35,12 @@ jobs:
         env:
           GITHUB_PAGES: "true"
 
+      - name: Verify static export
+        run: |
+          test -f out/index.html
+          test -f out/about/index.html
+          grep -q '/SPCG/_next/' out/index.html
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
