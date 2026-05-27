@@ -1,31 +1,34 @@
 # SP Construction Group (SPCG)
 
-## Live website — open this link
+## Live website
 
 ### [https://ashperry1.github.io/SPCG/](https://ashperry1.github.io/SPCG/)
 
-That is Sam’s construction company site (hero, services, chat, contact).
-
 ---
 
-### You are on the repo README (not the website)
+### If the site looks broken, shows README text, or keeps glitching
 
-GitHub shows this file on the **Code** tab. That is normal. The website is only at the link above.
-
-### One-time fix (if the link still shows this README text)
+GitHub must serve the **built site**, not the markdown README.
 
 1. Open **[github.com/AshPerry1/SPCG/settings/pages](https://github.com/AshPerry1/SPCG/settings/pages)**
-2. **Build and deployment** → Source: **Deploy from a branch**
-3. Branch: **`main`** · Folder: **`/docs`**
-4. Click **Save** — wait ~1 minute, then open the live link again
+2. **Build and deployment** → Source: **GitHub Actions** (not “Deploy from branch”)
+3. Save, then open **Actions** → run **Deploy site to GitHub Pages** if needed
+4. Wait 2–3 minutes, hard-refresh the site (`Cmd+Shift+R` / `Ctrl+Shift+R`)
 
-Every push to `main` rebuilds the site in the `docs/` folder automatically.
+The repo also includes a root `index.html` redirect and `.nojekyll` so the README is not used as the homepage when branch deploy is misconfigured.
 
 ---
+
+| Page | URL |
+|------|-----|
+| Home | [/SPCG/](https://ashperry1.github.io/SPCG/) |
+| About Sam | [/SPCG/about/](https://ashperry1.github.io/SPCG/about/) |
 
 | Edit | File |
 |------|------|
-| Contact, services, FAQ | `src/lib/site.ts` |
-| Chat assistant | `src/lib/chat-knowledge.ts` |
+| Contact, services, careers | `src/lib/site.ts` |
+| Sam’s bio | `src/lib/sam.ts` |
+| Photos | `public/images/` (see `public/images/README.md`) |
+| Chat answers | `src/lib/chat-knowledge.ts` |
 
 Repo: [github.com/AshPerry1/SPCG](https://github.com/AshPerry1/SPCG)

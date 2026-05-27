@@ -291,7 +291,10 @@ export function ChatWidget() {
                           return;
                         }
                         if (s.toLowerCase().includes("about sam")) {
-                          window.location.href = "/about";
+                          const base = window.location.pathname.includes("/SPCG")
+                            ? "/SPCG"
+                            : "";
+                          window.location.href = `${base}/about/`;
                           return;
                         }
                         sendMessage(s);
