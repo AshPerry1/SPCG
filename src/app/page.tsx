@@ -24,8 +24,8 @@ export default function Home() {
         <PhotoGallery />
         <Process />
         <Services />
-        <About />
         <WhyChoose />
+        <About />
         <Projects />
         <Testimonials />
         <FAQ />

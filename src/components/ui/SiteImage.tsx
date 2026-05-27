@@ -25,7 +25,7 @@ function ImageFallback({
 }) {
   return (
     <div
-      className={`flex items-center justify-center bg-gradient-to-br from-brand/12 via-surface to-brand-dark/8 ${className}`}
+      className={`flex items-center justify-center bg-surface ${className}`}
       role="img"
       aria-label={alt}
     >
@@ -55,7 +55,7 @@ export function SiteImage({
   sizes = "100vw",
   priority = false,
   showCaption = false,
-  rounded = "rounded-2xl",
+  rounded = "rounded-sm",
   overlay = true,
 }: SiteImageProps) {
   const [src, setSrc] = useState(asset.local);
@@ -87,7 +87,7 @@ export function SiteImage({
         sizes={sizes}
         priority={priority}
         onError={handleError}
-        className={`transition-transform duration-700 group-hover:scale-[1.03] ${imageClassName}`}
+        className={`transition-transform duration-500 group-hover:scale-[1.02] ${imageClassName}`}
       />
       {overlay && (
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-dark/45 via-transparent to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-50" />
