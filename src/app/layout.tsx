@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Libre_Baskerville } from "next/font/google";
+import { DM_Sans, Libre_Baskerville } from "next/font/google";
 import { ChatLoader } from "@/components/chat/ChatLoader";
 import "./globals.css";
 import { site } from "@/lib/site";
 
-const inter = Inter({
-  variable: "--font-inter",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -13,7 +13,7 @@ const inter = Inter({
 const libreBaskerville = Libre_Baskerville({
   variable: "--font-libre-baskerville",
   subsets: ["latin"],
-  weight: ["700"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -45,12 +45,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${libreBaskerville.variable} h-full`}
+      className={`${dmSans.variable} ${libreBaskerville.variable} h-full`}
     >
       <body className="min-h-full flex flex-col font-sans text-foreground antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-brand focus:px-4 focus:py-2 focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-brand focus:px-4 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-white"
         >
           Skip to content
         </a>
