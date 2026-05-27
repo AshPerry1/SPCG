@@ -69,10 +69,26 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/ .nojekyll
-          git add -f index.html 404.html 404 about _next _not-found images favicon.ico branding-reference.png file.svg globe.svg next.svg vercel.svg window.svg __next.*.txt 2>/dev/null || true
-          git add -u docs/ index.html 404.html 404 about _next _not-found images favicon.ico branding-reference.png file.svg globe.svg next.svg vercel.svg window.svg 2>/dev/null || true
-          git status --short
+          git add docs/ .nojekyll scripts/sync-pages-root.sh
+          while IFS= read -r path; do
+            git add -f "$path"
+          done <<EOF
+          index.html
+          404.html
+          404
+          about
+          _next
+          _not-found
+          images
+          favicon.ico
+          branding-reference.png
+          file.svg
+          globe.svg
+          next.svg
+          vercel.svg
+          window.svg
+          EOF
+          git add -f __next.*.txt 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "No deploy file changes"
           else

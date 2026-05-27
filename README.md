@@ -1,38 +1,30 @@
 # SP Construction Group (SPCG)
 
-## Live website
+**Live site:** [https://ashperry1.github.io/SPCG/](https://ashperry1.github.io/SPCG/)
 
-### [https://ashperry1.github.io/SPCG/](https://ashperry1.github.io/SPCG/)
+This markdown file is for GitHub only — not the public homepage.
 
----
+## GitHub Pages (pick one)
 
-### If you see this markdown, a “Loading…” page, or 404
+| Source | Settings |
+|--------|----------|
+| **Recommended** | **GitHub Actions** — workflow *Deploy site to GitHub Pages* |
+| **Also works** | **Deploy from branch** → `main` → **`/docs`** or **`/` (root)** |
+| **Also works** | **Deploy from branch** → `gh-pages` → **`/` (root)** |
 
-GitHub must serve the **built static site**, not the repo root or this file.
+Do **not** expect this README to appear at the live URL. Pushes to `main` rebuild the site into `docs/`, the repo root, and the `gh-pages` branch.
 
-1. Open **[github.com/AshPerry1/SPCG/settings/pages](https://github.com/AshPerry1/SPCG/settings/pages)**
-2. **Build and deployment** → **Source: GitHub Actions** (recommended)
-3. Click **Save**, then **Actions** → run **Deploy site to GitHub Pages** (or push to `main`)
-4. Wait 2–3 minutes, hard-refresh (`Cmd+Shift+R` / `Ctrl+Shift+R`)
+## Local build
 
-**Branch fallback:** Source → **Deploy from a branch** → branch **`main`** → folder **`/docs`** only. Never **`/` (root)** on `main` — that publishes this README.
+```bash
+npm run build:pages
+```
 
-`.nojekyll` is in the repo root and in `docs/` so GitHub does not run Jekyll on the export.
+## Edit content
 
----
-
-| Page | URL |
-|------|-----|
-| Home | [/SPCG/](https://ashperry1.github.io/SPCG/) |
-| About Sam | [/SPCG/about/](https://ashperry1.github.io/SPCG/about/) |
-
-| Edit | File |
+| What | File |
 |------|------|
 | Contact, services, careers | `src/lib/site.ts` |
 | Sam’s bio | `src/lib/sam.ts` |
 | Photos | `public/images/` |
-| Chat answers | `src/lib/chat-knowledge.ts` |
-
-**Local Pages build:** `npm run build:pages` → `out/`. Refresh `docs/` fallback: `rm -rf docs/* && cp -a out/. docs/`
-
-Repo: [github.com/AshPerry1/SPCG](https://github.com/AshPerry1/SPCG)
+| Chat | `src/lib/chat-knowledge.ts` |
