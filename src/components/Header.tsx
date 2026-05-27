@@ -11,7 +11,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -27,54 +27,51 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 transition-[box-shadow,background] duration-300 ${
+        className={`sticky top-0 z-50 border-b transition-[background,box-shadow] duration-300 ${
           scrolled
-            ? "border-b border-border/80 bg-background/90 shadow-sm backdrop-blur-xl"
-            : "border-b border-transparent bg-background"
+            ? "border-border/90 bg-background/95 shadow-sm backdrop-blur-md"
+            : "border-transparent bg-background"
         }`}
       >
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3.5 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 sm:px-6 lg:px-8">
           <Link
             href="/"
-            className="shrink-0 rounded-lg transition-opacity hover:opacity-85"
+            className="shrink-0 rounded-sm transition-opacity hover:opacity-80"
             onClick={() => setOpen(false)}
           >
             <Logo size="sm" />
           </Link>
 
           <nav
-            className="hidden items-center gap-1 lg:flex"
+            className="hidden items-center gap-0.5 lg:flex"
             aria-label="Main navigation"
           >
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-full px-3.5 py-2 text-sm font-medium text-muted transition-colors hover:bg-surface hover:text-foreground"
+                className="rounded-sm px-3 py-2 text-sm font-medium text-muted transition-colors hover:text-brand"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden items-center gap-2 sm:flex">
-            <Button
+          <div className="hidden items-center gap-3 sm:flex">
+            <a
               href={site.phoneHref}
-              variant="ghost"
-              size="md"
-              external
-              className="hidden md:inline-flex"
+              className="hidden text-sm font-medium text-foreground transition-colors hover:text-brand md:inline"
             >
               {site.phone}
-            </Button>
+            </a>
             <Button href="/#contact" variant="primary" size="md">
-              Get a free estimate
+              Request estimate
             </Button>
           </div>
 
           <button
             type="button"
-            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-border bg-surface lg:hidden"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-sm border border-border bg-surface lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -106,28 +103,30 @@ export function Header() {
         </div>
       </header>
 
-      {/* Mobile menu overlay */}
       <div
         id="mobile-menu"
         className={`fixed inset-0 z-40 lg:hidden ${open ? "" : "pointer-events-none"}`}
         aria-hidden={!open}
       >
         <div
-          className={`absolute inset-0 bg-foreground/20 backdrop-blur-sm transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 bg-foreground/25 backdrop-blur-sm transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0"}`}
           onClick={() => setOpen(false)}
         />
         <nav
-          className={`absolute right-0 top-0 flex h-full w-full max-w-sm flex-col bg-background px-5 pb-8 pt-20 shadow-2xl transition-transform duration-300 ease-out sm:max-w-xs ${
+          className={`absolute right-0 top-0 flex h-full w-full max-w-sm flex-col border-l border-border bg-background px-5 pb-8 pt-20 shadow-2xl transition-transform duration-300 ease-out sm:max-w-xs ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
           aria-label="Mobile navigation"
         >
-          <ul className="flex flex-col gap-1">
+          <p className="mb-4 px-4 text-xs font-medium uppercase tracking-widest text-muted-light">
+            {site.serviceArea}
+          </p>
+          <ul className="flex flex-col gap-0.5">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="flex min-h-12 items-center rounded-xl px-4 text-lg font-medium text-foreground transition-colors hover:bg-surface"
+                  className="flex min-h-12 items-center rounded-sm px-4 text-lg font-medium text-foreground transition-colors hover:bg-surface"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
@@ -151,7 +150,7 @@ export function Header() {
               size="lg"
               className="w-full"
             >
-              Get a free estimate
+              Request estimate
             </Button>
           </div>
         </nav>
