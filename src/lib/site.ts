@@ -126,7 +126,7 @@ export const audiences: (WithImage & {
     description:
       "Custom homes, additions, kitchens, baths, and whole-home remodels with one contractor accountable for the entire job.",
     image: {
-      local: publicAsset("/images/audiences/homeowners.jpg",
+      local: publicAsset("/images/audiences/homeowners.jpg"),
       fallback:
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
       alt: "Custom Alabama home",
@@ -137,7 +137,7 @@ export const audiences: (WithImage & {
     description:
       "Retail, office, and light industrial build-outs managed on schedule so you can open or expand on time.",
     image: {
-      local: publicAsset("/images/audiences/commercial.jpg",
+      local: publicAsset("/images/audiences/commercial.jpg"),
       fallback:
         "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
       alt: "Commercial interior build-out",
@@ -148,7 +148,7 @@ export const audiences: (WithImage & {
     description:
       "Reliable GC partner for multi-unit or commercial scopes — coordinated trades, permitting, and site supervision.",
     image: {
-      local: publicAsset("/images/audiences/developers.jpg",
+      local: publicAsset("/images/audiences/developers.jpg"),
       fallback:
         "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=800",
       alt: "Multi-story commercial project",
@@ -167,7 +167,7 @@ export const processSteps: (WithImage & {
     description:
       "Call, email, or use the form below. Share your city, timeline, and what you want built or renovated.",
     image: {
-      local: publicAsset("/images/process/consult.jpg",
+      local: publicAsset("/images/process/consult.jpg"),
       fallback:
         "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
       alt: "Planning a construction project",
@@ -179,7 +179,7 @@ export const processSteps: (WithImage & {
     description:
       "We walk the property, answer your questions, and deliver a straightforward bid — no surprise line items.",
     image: {
-      local: publicAsset("/images/process/estimate.jpg",
+      local: publicAsset("/images/process/estimate.jpg"),
       fallback:
         "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
       alt: "Site walkthrough and measurement",
@@ -191,7 +191,7 @@ export const processSteps: (WithImage & {
     description:
       "Sam oversees scheduling, subs, inspections, and updates until your project passes final walkthrough.",
     image: {
-      local: publicAsset("/images/process/build.jpg",
+      local: publicAsset("/images/process/build.jpg"),
       fallback:
         "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
       alt: "Active construction with crew on site",
@@ -210,7 +210,7 @@ export const services: (WithImage & {
       "Full oversight — bidding, permits, scheduling, and daily site management from mobilization to closeout.",
     icon: "clipboard",
     image: {
-      local: publicAsset("/images/services/general-contracting.jpg",
+      local: publicAsset("/images/services/general-contracting.jpg"),
       fallback:
         "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80",
       alt: "General contractor overseeing a build",
@@ -222,7 +222,7 @@ export const services: (WithImage & {
       "Custom homes, additions, and major remodels built to Alabama code with clear communication throughout.",
     icon: "building",
     image: {
-      local: publicAsset("/images/services/residential.jpg",
+      local: publicAsset("/images/services/residential.jpg"),
       fallback:
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80",
       alt: "Residential home under construction",
@@ -234,7 +234,7 @@ export const services: (WithImage & {
       "Tenant improvements and build-outs delivered on schedule with minimal disruption to your operations.",
     icon: "briefcase",
     image: {
-      local: publicAsset("/images/services/commercial.jpg",
+      local: publicAsset("/images/services/commercial.jpg"),
       fallback:
         "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=900",
       alt: "Commercial construction project",
@@ -246,7 +246,7 @@ export const services: (WithImage & {
       "Kitchens, baths, structural work, and insurance-related repairs handled by one accountable team.",
     icon: "hammer",
     image: {
-      local: publicAsset("/images/services/renovations.jpg",
+      local: publicAsset("/images/services/renovations.jpg"),
       fallback:
         "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=900",
       alt: "Kitchen renovation in progress",
@@ -280,7 +280,7 @@ export const projects = [
     location: "Central Alabama",
     year: "2025",
     image: {
-      local: publicAsset("/images/projects/home-lakefront.jpg",
+      local: publicAsset("/images/projects/home-lakefront.jpg"),
       fallback:
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&q=80",
       alt: "Custom lakefront home exterior",
@@ -292,7 +292,7 @@ export const projects = [
     location: "Birmingham area",
     year: "2024",
     image: {
-      local: publicAsset("/images/projects/retail-buildout.jpg",
+      local: publicAsset("/images/projects/retail-buildout.jpg"),
       fallback:
         "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80",
       alt: "Retail space build-out",
@@ -304,7 +304,7 @@ export const projects = [
     location: "Huntsville area",
     year: "2024",
     image: {
-      local: publicAsset("/images/projects/whole-home.jpg",
+      local: publicAsset("/images/projects/whole-home.jpg"),
       fallback:
         "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1400",
       alt: "Renovated kitchen and living space",
@@ -316,7 +316,7 @@ export const projects = [
     location: "Montgomery area",
     year: "2023",
     image: {
-      local: publicAsset("/images/projects/office-ti.jpg",
+      local: publicAsset("/images/projects/office-ti.jpg"),
       fallback:
         "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80",
       alt: "Modern office interior",
@@ -328,7 +328,7 @@ export const projects = [
     location: "Mobile area",
     year: "2023",
     image: {
-      local: publicAsset("/images/projects/addition.jpg",
+      local: publicAsset("/images/projects/addition.jpg"),
       fallback:
         "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80",
       alt: "Home addition with covered patio",
@@ -340,7 +340,7 @@ export const projects = [
     location: "Statewide",
     year: "2024",
     image: {
-      local: publicAsset("/images/projects/restoration.jpg",
+      local: publicAsset("/images/projects/restoration.jpg"),
       fallback:
         "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=80",
       alt: "Structural repair and restoration",
@@ -356,7 +356,7 @@ export const testimonials = [
     role: "Homeowner",
     location: "Birmingham, AL",
     image: {
-      local: publicAsset("/images/testimonials/client-1.jpg",
+      local: publicAsset("/images/testimonials/client-1.jpg"),
       fallback:
         "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200",
       alt: "SPCG client",
@@ -369,7 +369,7 @@ export const testimonials = [
     role: "Business owner",
     location: "Huntsville, AL",
     image: {
-      local: publicAsset("/images/testimonials/client-2.jpg",
+      local: publicAsset("/images/testimonials/client-2.jpg"),
       fallback:
         "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200",
       alt: "SPCG commercial client",

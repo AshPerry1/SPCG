@@ -3,10 +3,12 @@ name: Deploy site to GitHub Pages
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - "docs/**"
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -15,7 +17,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,19 +37,29 @@ jobs:
         env:
           GITHUB_PAGES: "true"
 
-      - name: Verify static export
+      - name: Publish to docs/ (branch deploy)
         run: |
-          test -f out/index.html
-          test -f out/about/index.html
-          grep -q '/SPCG/_next/' out/index.html
+          rm -rf docs
+          mkdir -p docs
+          cp -a out/. docs/
+          touch docs/.nojekyll
 
-      - name: Upload Pages artifact
+      - name: Commit docs for GitHub Pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git diff --staged --quiet && echo "No docs changes" && exit 0
+          git commit -m "chore(pages): update built site in docs/"
+          git push
+
+      - name: Upload Pages artifact (Actions deploy)
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
   deploy:
-    needs: build
+    needs: build-and-deploy
     runs-on: ubuntu-latest
     environment:
       name: github-pages
