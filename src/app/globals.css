@@ -237,10 +237,36 @@ body {
   animation: chat-typing-dot 1s ease-in-out infinite;
 }
 
-.shadow-soft {
+.surface-card {
+  border: 1px solid var(--border);
+  background: var(--surface-elevated);
+}
+
+.surface-card-elevated {
+  border: 1px solid var(--border);
+  background: var(--surface-elevated);
   box-shadow: var(--shadow-soft);
 }
 
-.shadow-elevated {
-  box-shadow: var(--shadow-elevated);
+.field-input {
+  min-height: 3rem;
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--background);
+  padding: 0 1rem;
+  font-size: 1rem;
+  color: var(--foreground);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.field-input:focus {
+  border-color: var(--brand);
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 15%, transparent);
+}
+
+.field-input::placeholder {
+  color: var(--muted-light);
 }
