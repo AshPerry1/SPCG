@@ -8,15 +8,15 @@ export function Contact() {
         <div className="lg:col-span-2">
           <SectionHeader
             eyebrow="Contact"
-            title="Get your free estimate."
-            description="The fastest way to reach us is by phone. Prefer email or the form? We'll get back to you within one business day."
+            title="Request an estimate."
+            description="Call for the fastest response, or use email and the form below — we reply within one business day."
             align="left"
           />
 
           <div className="mt-8 space-y-4">
             <a
               href={site.phoneHref}
-              className="flex min-h-[72px] items-center gap-4 rounded-2xl bg-brand px-5 py-4 text-white transition-colors hover:bg-brand-light sm:px-6"
+              className="flex min-h-[72px] items-center gap-4 rounded-sm bg-brand px-5 py-4 text-white transition-colors hover:bg-brand-light sm:px-6"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/15">
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
@@ -33,7 +33,7 @@ export function Contact() {
 
             <a
               href={`mailto:${site.email}`}
-              className="flex min-h-[72px] items-center gap-4 rounded-2xl bg-surface px-5 py-4 ring-1 ring-border transition-colors hover:bg-surface/80 sm:px-6"
+              className="flex min-h-[72px] items-center gap-4 rounded-sm border border-border bg-surface-elevated px-5 py-4 transition-colors hover:border-brand/30 sm:px-6"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand/10 text-brand">
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
@@ -50,7 +50,7 @@ export function Contact() {
               </span>
             </a>
 
-            <dl className="rounded-2xl bg-surface p-5 text-sm ring-1 ring-border sm:p-6">
+            <dl className="border border-border bg-surface p-5 text-sm sm:p-6">
               <div className="flex justify-between gap-4 border-b border-border py-3">
                 <dt className="text-muted">Service area</dt>
                 <dd className="font-medium text-foreground text-right">

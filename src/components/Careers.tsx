@@ -30,18 +30,18 @@ export function Careers() {
     <Section id="careers" variant="surface">
       <SectionHeader
         eyebrow="Careers"
-        title="Join the SPCG team."
-        description="We're growing across Alabama. Explore open roles in estimating, accounting, project leadership, and the field — then apply in a few minutes."
+        title="Build your career with SPCG."
+        description="Growing across Alabama — estimating, accounting, project leadership, and skilled field roles."
         align="center"
       />
 
       <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:gap-6">
         {openRoles.map((role, i) => (
           <Reveal key={role.id} delay={i * 40}>
-            <li className="flex h-full flex-col rounded-2xl bg-surface-elevated p-6 ring-1 ring-border sm:p-7">
+            <li className="flex h-full flex-col border border-border bg-surface-elevated p-6 sm:p-7">
               <div className="flex flex-wrap items-start justify-between gap-2">
-                <h3 className="text-lg font-semibold text-foreground">{role.title}</h3>
-                <span className="rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold text-brand">
+                <h3 className="font-display text-lg font-bold text-foreground">{role.title}</h3>
+                <span className="text-xs font-semibold uppercase tracking-wider text-brand">
                   {role.type}
                 </span>
               </div>
