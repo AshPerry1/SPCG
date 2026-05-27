@@ -53,16 +53,17 @@ export function SiteImage({
   showHint = false,
   rounded = "rounded-2xl",
 }: SiteImageProps) {
-  const [src, setSrc] = useState(asset.local);
+  // Use fallback first so the page doesn't flash/reload when local files are missing
+  const [src, setSrc] = useState(asset.fallback || asset.local);
   const [failed, setFailed] = useState(false);
 
   const handleError = useCallback(() => {
-    if (src === asset.local && asset.fallback) {
-      setSrc(asset.fallback);
-    } else {
-      setFailed(true);
+    if (src !== asset.local && asset.local) {
+      setSrc(asset.local);
+      return;
     }
-  }, [asset.fallback, asset.local, src]);
+    setFailed(true);
+  }, [asset.local, src]);
 
   if (failed) {
     return (
@@ -73,6 +74,9 @@ export function SiteImage({
       />
     );
   }
+
+  const isSample =
+    showHint && asset.fallback && src === asset.fallback && src !== asset.local;
 
   return (
     <figure className={`group relative overflow-hidden ${rounded} ${className}`}>
@@ -91,7 +95,7 @@ export function SiteImage({
           {asset.caption}
         </figcaption>
       )}
-      {showHint && src === asset.fallback && (
+      {isSample && (
         <span className="absolute right-3 top-3 rounded-full bg-black/40 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-white/90 backdrop-blur-sm">
           Sample photo
         </span>
