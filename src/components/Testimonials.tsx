@@ -22,6 +22,7 @@ export function Testimonials() {
                     className="absolute inset-0"
                     sizes="56px"
                     rounded="rounded-full"
+                    overlay={false}
                     imageClassName="object-cover"
                   />
                 </div>

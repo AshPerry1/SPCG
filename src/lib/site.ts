@@ -127,7 +127,7 @@ export const audiences: (WithImage & {
     image: {
       local: "/images/audiences/homeowners.jpg",
       fallback:
-        "https://images.unsplash.com/photo-1600585154340-be6162a9a2c9?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
       alt: "Custom Alabama home",
     },
   },
@@ -149,7 +149,7 @@ export const audiences: (WithImage & {
     image: {
       local: "/images/audiences/developers.jpg",
       fallback:
-        "https://images.unsplash.com/photo-1486406146928-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+        "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=800",
       alt: "Multi-story commercial project",
     },
   },
@@ -223,7 +223,7 @@ export const services: (WithImage & {
     image: {
       local: "/images/services/residential.jpg",
       fallback:
-        "https://images.unsplash.com/photo-1600585154340-be6162a9a2c9?auto=format&fit=crop&w=900&q=80",
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80",
       alt: "Residential home under construction",
     },
   },
@@ -235,7 +235,7 @@ export const services: (WithImage & {
     image: {
       local: "/images/services/commercial.jpg",
       fallback:
-        "https://images.unsplash.com/photo-1486406146928-c627a92ad1ab?auto=format&fit=crop&w=900&q=80",
+        "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=900",
       alt: "Commercial construction project",
     },
   },
@@ -247,7 +247,7 @@ export const services: (WithImage & {
     image: {
       local: "/images/services/renovations.jpg",
       fallback:
-        "https://images.unsplash.com/photo-1556909114-f6e7ad7d4046?auto=format&fit=crop&w=900&q=80",
+        "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=900",
       alt: "Kitchen renovation in progress",
     },
   },
