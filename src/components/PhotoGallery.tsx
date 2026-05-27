@@ -1,4 +1,4 @@
-import { Section, SectionHeader } from "@/components/ui/Section";
+import { SectionHeader } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { galleryImages } from "@/lib/images";
@@ -12,7 +12,10 @@ const spanClass = {
 
 export function PhotoGallery() {
   return (
-    <Section id="gallery" variant="dark" className="!px-0">
+    <section
+      id="gallery"
+      className="scroll-mt-20 bg-brand-dark py-16 sm:py-24 lg:py-28"
+    >
       <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Gallery"
@@ -38,6 +41,6 @@ export function PhotoGallery() {
           </Reveal>
         ))}
       </ul>
-    </Section>
+    </section>
   );
 }
