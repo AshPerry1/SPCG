@@ -290,6 +290,10 @@ export function ChatWidget() {
                           document.getElementById("careers")?.scrollIntoView({ behavior: "smooth" });
                           return;
                         }
+                        if (s.toLowerCase().includes("about sam")) {
+                          window.location.href = "/about";
+                          return;
+                        }
                         sendMessage(s);
                       }}
                       className="rounded-full bg-surface px-3 py-1.5 text-xs font-medium text-brand ring-1 ring-border hover:bg-brand/5"

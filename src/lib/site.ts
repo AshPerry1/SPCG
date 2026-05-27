@@ -17,14 +17,14 @@ export const site = {
   license: "Alabama General Contractor — license # coming soon",
 } as const;
 
+/** Header & footer navigation (works from any page) */
 export const navLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#process", label: "How it works" },
-  { href: "#projects", label: "Work" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#careers", label: "Careers" },
-  { href: "#contact", label: "Contact" },
+  { href: "/about", label: "About Sam" },
+  { href: "/#services", label: "Services" },
+  { href: "/#gallery", label: "Gallery" },
+  { href: "/#projects", label: "Work" },
+  { href: "/#careers", label: "Careers" },
+  { href: "/#contact", label: "Contact" },
 ] as const;
 
 export const openRoles = [

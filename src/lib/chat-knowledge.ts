@@ -203,9 +203,9 @@ export const knowledgeEntries: KnowledgeEntry[] = [
   },
   {
     id: "sam",
-    keywords: ["sam", "patel", "owner", "who", "meet", "talk to"],
-    response: `${site.owner} is our licensed Alabama general contractor and oversees projects from bid through final walkthrough. For a real conversation about your specific job, call ${site.phone} or submit the contact form — you'll hear back within one business day.`,
-    suggestions: ["How do I get an estimate?", `Call ${site.phone}`],
+    keywords: ["sam", "patel", "owner", "who", "meet", "talk to", "about sam", "about me"],
+    response: `${site.owner} is the founder and licensed Alabama general contractor at ${site.name}. He personally oversees projects from bid through final walkthrough.\n\nRead his full story on the About Sam page (/about), or call ${site.phone} to talk about your project — you'll hear back within one business day.`,
+    suggestions: ["About Sam page", "How do I get an estimate?"],
   },
   {
     id: "hours",
