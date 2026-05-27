@@ -13,34 +13,27 @@ export function Logo({
 }: LogoProps) {
   const isLight = variant === "light";
   const primary = isLight ? "text-white" : "text-brand";
-  const line = isLight ? "bg-white" : "bg-brand";
-  const sub = isLight ? "text-white/85" : "text-brand";
+  const line = isLight ? "bg-accent" : "bg-brand";
+  const sub = isLight ? "text-white/80" : "text-brand-muted";
 
   const acronymSize =
-    size === "sm"
-      ? "text-xl sm:text-2xl"
-      : "text-2xl sm:text-[1.75rem]";
-  const lineWidth = size === "sm" ? "max-w-[108px]" : "max-w-[132px]";
+    size === "sm" ? "text-[1.35rem] sm:text-2xl" : "text-2xl sm:text-[1.85rem]";
+  const lineWidth = size === "sm" ? "w-[104px]" : "w-[128px]";
   const subSize =
     size === "sm"
-      ? "text-[0.45rem] tracking-[0.16em]"
-      : "text-[0.5rem] tracking-[0.18em] sm:text-[0.52rem]";
+      ? "text-[0.42rem] tracking-[0.2em]"
+      : "text-[0.48rem] tracking-[0.22em] sm:text-[0.5rem]";
 
   return (
-    <div
-      className={`inline-flex flex-col items-start ${className}`}
-      aria-label={site.name}
-    >
-      <span className={`h-px w-full ${lineWidth} ${line}`} aria-hidden />
+    <div className={`inline-flex flex-col items-start ${className}`} aria-label={site.name}>
+      <span className={`h-0.5 ${lineWidth} ${line}`} aria-hidden />
       <span
         className={`font-display font-bold leading-none tracking-tight ${acronymSize} ${primary}`}
       >
         {site.shortName}
       </span>
-      <span className={`mt-1 h-px w-full ${lineWidth} ${line}`} aria-hidden />
-      <span
-        className={`mt-1.5 font-semibold uppercase ${subSize} ${sub}`}
-      >
+      <span className={`mt-1.5 h-0.5 ${lineWidth} ${line}`} aria-hidden />
+      <span className={`mt-2 font-semibold uppercase ${subSize} ${sub}`}>
         {site.legalName}
       </span>
     </div>

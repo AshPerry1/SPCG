@@ -58,20 +58,19 @@ export function Hero() {
 
           <Reveal delay={120} className="relative lg:col-span-7 lg:col-start-6 xl:col-span-7 xl:col-start-6">
             <div className="relative h-full min-h-[420px] sm:min-h-[480px] lg:min-h-0">
-              <div className="absolute inset-0 lg:inset-y-8 lg:-right-8 lg:left-4">
+              <div className="frame-dark absolute inset-0 lg:inset-y-8 lg:-right-8 lg:left-4">
                 <SiteImage
                   asset={heroImages.main}
                   className="absolute inset-0"
                   sizes="(max-width: 1024px) 100vw, 52vw"
                   priority
                   showCaption
-                  frame-dark
                   rounded=""
                   imageClassName="object-cover"
                 />
               </div>
               <div className="absolute bottom-6 left-0 z-10 hidden w-[42%] sm:block lg:bottom-16 lg:-left-6">
-                <div className="frame-dark relative aspect-[4/3] bg-brand-dark">
+                <div className="frame-dark relative aspect-[4/3] overflow-hidden bg-brand-dark">
                   <SiteImage
                     asset={heroImages.accentA}
                     className="absolute inset-0"
