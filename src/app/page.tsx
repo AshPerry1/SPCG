@@ -1,4 +1,5 @@
 import { About } from "@/components/About";
+import { Careers } from "@/components/Careers";
 import { Audiences } from "@/components/Audiences";
 import { Contact } from "@/components/Contact";
 import { CTABand } from "@/components/CTABand";
@@ -31,6 +32,7 @@ export default function Home() {
         <Projects />
         <Testimonials />
         <FAQ />
+        <Careers />
         <CTABand />
         <Contact />
       </main>

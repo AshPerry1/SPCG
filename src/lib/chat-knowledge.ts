@@ -1,6 +1,7 @@
 import {
   audiences,
   faqs,
+  openRoles,
   processSteps,
   services,
   site,
@@ -213,6 +214,30 @@ export const knowledgeEntries: KnowledgeEntry[] = [
     suggestions: ["How do I get an estimate?"],
   },
   {
+    id: "careers",
+    keywords: [
+      "job",
+      "jobs",
+      "career",
+      "careers",
+      "hiring",
+      "apply",
+      "application",
+      "work for",
+      "employment",
+      "estimator",
+      "accountant",
+      "superintendent",
+    ],
+    response: `${site.name} is hiring across Alabama. Open roles include:\n\n${openRoles
+      .filter((r) => r.id !== "general")
+      .map((r) => `• ${r.title} (${r.type})`)
+      .join(
+        "\n",
+      )}\n\nScroll to the Careers section on this site or apply at #careers — you can also email ${site.careersEmail}.`,
+    suggestions: ["Go to careers section"],
+  },
+  {
     id: "contact-form",
     keywords: ["form", "contact form", "submit", "send message"],
     response: `Scroll to the Contact section or tap below — the form asks for your name, phone, email, Alabama city, project type, and a short description. Required fields are marked with *.\n\nWe'll respond within one business day.`,
@@ -249,6 +274,11 @@ export const sectionNudges: Record<
     message:
       "Filling out the form? I can tell you what info helps us quote faster — or you can call anytime.",
     suggestions: ["What should I include?", `Call ${site.phone}`],
+  },
+  careers: {
+    message:
+      "Looking to join the team? I can point you to our open roles — estimator, accountant, superintendent, and more.",
+    suggestions: ["What jobs are open?", "Go to careers section"],
   },
   faq: {
     message:
