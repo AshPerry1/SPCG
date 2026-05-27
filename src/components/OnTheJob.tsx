@@ -1,24 +1,19 @@
-import { Reveal } from "@/components/ui/Reveal";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { onSiteStrip } from "@/lib/images";
 
 export function OnTheJob() {
-  const doubled = [...onSiteStrip, ...onSiteStrip];
-
   return (
     <section className="overflow-hidden border-y border-border bg-brand-dark py-3" aria-label="On the job">
       <div className="mb-3 px-5 sm:px-6">
-        <Reveal>
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-white/60">
-            On the job across Alabama
-          </p>
-        </Reveal>
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-white/60">
+          On the job across Alabama
+        </p>
       </div>
-      <div className="site-marquee flex w-max gap-3 px-3">
-        {doubled.map((img, i) => (
+      <div className="flex gap-3 overflow-x-auto px-5 pb-1 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] sm:justify-center sm:overflow-visible sm:px-6 [&::-webkit-scrollbar]:hidden">
+        {onSiteStrip.map((img) => (
           <div
-            key={`${img.local}-${i}`}
-            className="relative h-28 w-44 shrink-0 overflow-hidden rounded-lg ring-1 ring-white/10 sm:h-32 sm:w-52"
+            key={img.local}
+            className="relative h-28 w-44 shrink-0 snap-center overflow-hidden rounded-lg ring-1 ring-white/10 sm:h-32 sm:w-52"
           >
             <SiteImage
               asset={img}
