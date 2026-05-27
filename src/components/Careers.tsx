@@ -61,7 +61,7 @@ export function Careers() {
               <button
                 type="button"
                 onClick={() => scrollToApply(role.id)}
-                className="mt-6 min-h-11 w-full rounded-full bg-brand text-sm font-semibold text-white transition-colors hover:bg-brand-light sm:w-auto sm:px-6"
+                className="mt-6 min-h-11 w-full rounded-sm bg-brand text-sm font-semibold tracking-wide text-white transition-colors hover:bg-brand-light sm:w-auto sm:px-6"
               >
                 Apply for this role
               </button>
@@ -73,7 +73,7 @@ export function Careers() {
       <Reveal className="mt-14">
         <div
           id="careers-apply"
-          className="scroll-mt-24 rounded-2xl bg-background p-6 ring-1 ring-border sm:p-8 lg:grid lg:grid-cols-5 lg:gap-10"
+          className="surface-card-elevated scroll-mt-24 p-6 sm:p-8 lg:grid lg:grid-cols-5 lg:gap-10"
         >
           <div className="lg:col-span-2">
             <h3 className="font-display text-2xl font-bold text-foreground">
@@ -208,20 +208,23 @@ export function Careers() {
                   name="message"
                   rows={4}
                   required
-                  className="w-full resize-y rounded-xl border border-border bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-light focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
+                  className="field-input resize-y py-3"
                   placeholder="Brief background, relevant skills, and when you could start…"
                 />
               </label>
             </div>
             <button
               type="submit"
-              className="mt-6 flex min-h-12 w-full items-center justify-center rounded-full bg-brand px-8 text-base font-semibold text-white transition-colors hover:bg-brand-light sm:w-auto"
+              className="mt-6 flex min-h-12 w-full items-center justify-center rounded-sm bg-brand px-8 text-[0.9375rem] font-semibold tracking-wide text-white transition-colors hover:bg-brand-light sm:w-auto"
             >
               Submit application
             </button>
             <p className="mt-4 text-xs leading-relaxed text-muted-light">
-              Form preview only — connect to Formspree, Google Forms, or email when
-              ready. Applications can go to {site.careersEmail}.
+              Prefer email? Send your resume to{" "}
+              <a href={`mailto:${site.careersEmail}`} className="font-medium text-brand">
+                {site.careersEmail}
+              </a>
+              .
             </p>
           </form>
         </div>
