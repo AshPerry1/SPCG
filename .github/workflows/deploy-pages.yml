@@ -44,21 +44,39 @@ jobs:
           grep -q '/SPCG/_next/' out/index.html
           grep -q '/SPCG/images/' out/index.html
 
-      - name: Sync build to docs/ (branch deploy fallback)
+      - name: Sync to docs/ (branch deploy /docs)
         run: |
           rm -rf docs/*
           cp -a out/. docs/
           touch docs/.nojekyll
 
-      - name: Commit docs/ if changed
+      - name: Sync to repo root (branch deploy / root)
+        run: bash scripts/sync-pages-root.sh
+
+      - name: Publish gh-pages branch
+        run: |
+          cd out
+          touch .nojekyll
+          git init -q
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Deploy ${{ github.sha }}"
+          git branch -M gh-pages
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
+
+      - name: Commit and push static files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/
+          git add docs/ .nojekyll
+          git add -f index.html 404.html 404 about _next _not-found images favicon.ico branding-reference.png file.svg globe.svg next.svg vercel.svg window.svg __next.*.txt 2>/dev/null || true
+          git add -u docs/ index.html 404.html 404 about _next _not-found images favicon.ico branding-reference.png file.svg globe.svg next.svg vercel.svg window.svg 2>/dev/null || true
+          git status --short
           if git diff --staged --quiet; then
-            echo "docs/ unchanged"
+            echo "No deploy file changes"
           else
-            git commit -m "chore(pages): sync docs/ with latest build"
+            git commit -m "chore(pages): publish static site to docs/ and root"
             git push
           fi
 
