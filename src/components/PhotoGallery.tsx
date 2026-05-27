@@ -12,30 +12,27 @@ const spanClass = {
 
 export function PhotoGallery() {
   return (
-    <section
-      id="gallery"
-      className="scroll-mt-[4.5rem] bg-brand-dark py-20 sm:py-28 lg:py-32 sm:scroll-mt-24"
-    >
-      <div className="container-site">
+    <section id="gallery" className="scroll-mt-20 bg-brand-dark py-20 sm:py-28 lg:py-32">
+      <div className="site-container">
         <SectionHeader
           eyebrow="Gallery"
-          title="Work across Alabama."
-          description="Custom homes, commercial build-outs, and renovations — photographed on our job sites."
+          title="Built across Alabama."
+          description="Residential, commercial, and renovation work — photographed on our job sites."
           align="left"
           light
         />
       </div>
 
-      <ul className="container-site mt-12 grid grid-cols-2 gap-1.5 sm:gap-2 md:grid-cols-4 md:auto-rows-[minmax(11rem,1fr)] lg:auto-rows-[minmax(13rem,1fr)]">
+      <ul className="site-container mt-14 grid grid-cols-2 gap-1 sm:grid-cols-4 md:auto-rows-[minmax(180px,1fr)] md:gap-1.5">
         {galleryImages.map((item, i) => (
           <Reveal key={item.local} delay={i * 40} className={spanClass[item.span]}>
-            <li className="relative min-h-[9rem] list-none md:min-h-0">
+            <li className="relative min-h-[160px] list-none md:min-h-0">
               <SiteImage
                 asset={item}
                 className="absolute inset-0 h-full w-full"
                 sizes="(max-width: 768px) 50vw, 25vw"
                 showCaption
-                rounded="rounded-none"
+                rounded=""
               />
             </li>
           </Reveal>
