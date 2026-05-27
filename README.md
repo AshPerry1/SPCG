@@ -1,26 +1,31 @@
 # SP Construction Group (SPCG)
 
-## 🌐 Live website (open this — not the text below)
+## Live website — open this link
 
-### **https://ashperry1.github.io/SPCG/**
+### [https://ashperry1.github.io/SPCG/](https://ashperry1.github.io/SPCG/)
 
-The link above is Sam’s construction company website.  
-You are reading the **repo README** right now — GitHub always shows this on the code tab. It is **not** the website.
-
----
-
-**One-time setup (repo owner):** GitHub → **Settings** → **Pages** → **Build and deployment** → Source: **Deploy from a branch** → Branch: **`gh-pages`** → **`/ (root)`** → Save.
-
-After every push to `main`, GitHub Actions rebuilds and updates the live site automatically.
+That is Sam’s construction company site (hero, services, chat, contact).
 
 ---
 
-Marketing site for **SP Construction Group** — Alabama general contractor (Sam Patel).
+### You are on the repo README (not the website)
+
+GitHub shows this file on the **Code** tab. That is normal. The website is only at the link above.
+
+### One-time fix (if the link still shows this README text)
+
+1. Open **[github.com/AshPerry1/SPCG/settings/pages](https://github.com/AshPerry1/SPCG/settings/pages)**
+2. **Build and deployment** → Source: **Deploy from a branch**
+3. Branch: **`main`** · Folder: **`/docs`**
+4. Click **Save** — wait ~1 minute, then open the live link again
+
+Every push to `main` rebuilds the site in the `docs/` folder automatically.
+
+---
 
 | Edit | File |
 |------|------|
 | Contact, services, FAQ | `src/lib/site.ts` |
-| Chat assistant answers | `src/lib/chat-knowledge.ts` |
-| Branding reference image | `public/branding-reference.png` |
+| Chat assistant | `src/lib/chat-knowledge.ts` |
 
-Repo: https://github.com/AshPerry1/SPCG
+Repo: [github.com/AshPerry1/SPCG](https://github.com/AshPerry1/SPCG)
