@@ -67,7 +67,7 @@ export function Header() {
             >
               {site.phone}
             </Button>
-            <Button href="#contact" variant="primary" size="md">
+            <Button href="/#contact" variant="primary" size="md">
               Get a free estimate
             </Button>
           </div>
@@ -146,7 +146,7 @@ export function Header() {
               Call {site.phone}
             </Button>
             <Button
-              href="#contact"
+              href="/#contact"
               variant="primary"
               size="lg"
               className="w-full"
