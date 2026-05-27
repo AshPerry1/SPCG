@@ -49,7 +49,7 @@ export const teamImages = {
   },
   branding: {
     local: publicAsset("/images/team/branding.jpg",
-    fallback: "/branding-reference.png",
+    fallback: publicAsset("/branding-reference.png"),
     alt: "SPCG branded truck, hard hat, and apparel",
   },
 } as const satisfies Record<string, ImageAsset>;
