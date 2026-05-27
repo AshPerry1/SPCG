@@ -22,7 +22,6 @@ export function Process() {
                   asset={step.image}
                   className="absolute inset-0"
                   sizes="(max-width: 1024px) 100vw, 33vw"
-                  showHint
                   rounded="rounded-none rounded-t-2xl"
                 />
                 <span className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-brand text-sm font-bold text-white shadow-lg">

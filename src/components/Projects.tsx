@@ -29,7 +29,6 @@ export function Projects() {
                 asset={featured.image}
                 className="absolute inset-0"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                showHint
                 rounded="rounded-none lg:rounded-l-2xl"
               />
             </div>
@@ -59,7 +58,6 @@ export function Projects() {
                   asset={project.image}
                   className="absolute inset-0"
                   sizes="(max-width: 640px) 100vw, 33vw"
-                  showHint
                   rounded="rounded-none rounded-t-2xl"
                 />
               </div>

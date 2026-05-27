@@ -11,6 +11,7 @@ export function Hero() {
       data-chat-section="hero"
       className="relative overflow-hidden bg-background"
     >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_100%_0%,rgba(26,74,56,0.07),transparent)]" />
       <div className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full bg-brand/5 blur-3xl" />
       <div className="mx-auto max-w-6xl px-5 pt-10 pb-14 sm:px-6 sm:pt-16 sm:pb-20 lg:px-8 lg:pt-20">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
@@ -57,7 +58,6 @@ export function Hero() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
                 showCaption
-                showHint
               />
               <div className="absolute -left-3 top-8 hidden w-[42%] overflow-hidden rounded-xl shadow-lg ring-2 ring-white sm:block lg:-left-6">
                 <div className="relative aspect-[4/3]">
@@ -65,7 +65,6 @@ export function Hero() {
                     asset={heroImages.accentA}
                     className="absolute inset-0"
                     sizes="200px"
-                    showHint
                     rounded="rounded-xl"
                   />
                 </div>
@@ -76,7 +75,6 @@ export function Hero() {
                     asset={heroImages.accentB}
                     className="absolute inset-0"
                     sizes="180px"
-                    showHint
                     rounded="rounded-xl"
                   />
                 </div>

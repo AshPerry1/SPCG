@@ -51,7 +51,6 @@ export function AboutSam() {
                   sizes="(max-width: 1024px) 100vw, 480px"
                   priority
                   showCaption
-                  showHint
                   imageClassName="object-cover object-top"
                 />
               </div>
@@ -145,7 +144,6 @@ export function AboutSam() {
                   asset={teamImages.crew}
                   className="absolute inset-0"
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  showHint
                 />
               </div>
             </Reveal>
@@ -163,7 +161,6 @@ export function AboutSam() {
                   asset={teamImages.branding}
                   className="absolute inset-0"
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  showHint
                 />
               </div>
             </Reveal>

@@ -17,7 +17,6 @@ export function About() {
               className="absolute inset-0"
               sizes="(max-width: 1024px) 100vw, 40vw"
               showCaption
-              showHint
               imageClassName="object-cover object-top"
             />
           </div>

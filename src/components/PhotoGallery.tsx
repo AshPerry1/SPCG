@@ -29,7 +29,6 @@ export function PhotoGallery() {
                 className="absolute inset-0 h-full w-full shadow-md ring-1 ring-border"
                 sizes="(max-width: 640px) 50vw, 25vw"
                 showCaption
-                showHint
               />
             </li>
           </Reveal>

@@ -21,7 +21,6 @@ export function Audiences() {
                   asset={item.image}
                   className="absolute inset-0"
                   sizes="(max-width: 640px) 100vw, 33vw"
-                  showHint
                   rounded="rounded-none rounded-t-2xl"
                 />
               </div>

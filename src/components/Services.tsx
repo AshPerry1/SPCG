@@ -21,7 +21,6 @@ export function Services() {
                   asset={service.image}
                   className="absolute inset-0"
                   sizes="(max-width: 640px) 100vw, 50vw"
-                  showHint
                   rounded="rounded-none rounded-t-2xl"
                 />
               </div>
