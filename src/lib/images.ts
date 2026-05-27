@@ -1,6 +1,6 @@
 /**
- * Image map for SPCG — drop files into public/images/ using the `local` paths below.
- * Until a local file exists, the site shows `fallback` (stock) automatically.
+ * Image map for SPCG — photos live in public/images/ at each `local` path.
+ * `fallback` is used only if a local file is missing or fails to load.
  */
 export type ImageAsset = {
   local: string;

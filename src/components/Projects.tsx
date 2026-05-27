@@ -13,7 +13,7 @@ export function Projects() {
         <SectionHeader
           eyebrow="Our work"
           title="Projects across Alabama."
-          description="Each slot is ready for Sam's real job photos — add files to public/images/projects/ to replace the samples instantly."
+          description="Custom homes, tenant improvements, and renovations delivered on schedule with clear communication from bid to final walkthrough."
           align="left"
         />
         <Button href="#contact" variant="secondary" size="md" className="shrink-0 self-start sm:mb-2">
@@ -23,8 +23,8 @@ export function Projects() {
 
       {featured && (
         <Reveal className="mt-10">
-          <article className="group overflow-hidden rounded-2xl bg-surface-elevated ring-1 ring-border lg:grid lg:grid-cols-2">
-            <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[360px]">
+          <article className="group overflow-hidden rounded-2xl bg-surface-elevated shadow-sm ring-1 ring-border transition-shadow hover:shadow-xl lg:grid lg:grid-cols-2">
+            <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[380px]">
               <SiteImage
                 asset={featured.image}
                 className="absolute inset-0"
@@ -52,7 +52,7 @@ export function Projects() {
       <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
         {rest.map((project, i) => (
           <Reveal key={project.title} delay={i * 50}>
-            <li className="group list-none overflow-hidden rounded-2xl bg-surface-elevated ring-1 ring-border transition-shadow hover:shadow-lg">
+            <li className="group list-none overflow-hidden rounded-2xl bg-surface-elevated ring-1 ring-border transition-all hover:-translate-y-0.5 hover:shadow-lg">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <SiteImage
                   asset={project.image}
