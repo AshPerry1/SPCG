@@ -7,7 +7,7 @@ export const sam = {
   company: site.name,
   location: "Alabama",
   intro:
-    "I started SP Construction Group because owners deserve a general contractor who answers the phone, shows up on site, and stands behind the work — not a faceless company where you're passed between departments.",
+    "I started SP Construction Group because owners deserve a general contractor who answers the phone, walks the site, and stands behind the work — not a faceless company that passes you between departments.",
   story: [
     "I grew up around people who valued hard work and straight talk. That mindset shapes how we run every project at SPCG — residential, commercial, remodel, or repair. You get clear communication from the first walkthrough through final walkthrough.",
     "As a licensed Alabama general contractor, I personally oversee our jobs: scheduling trades, managing permits and inspections, and making sure the details match what we promised in your written estimate. If something changes, you'll hear it from me — not weeks later.",
@@ -22,7 +22,7 @@ export const sam = {
     {
       title: "Show up",
       description:
-        "You'll work directly with me and a accountable team — not a revolving cast of strangers.",
+        "You'll work directly with me and an accountable team — not a revolving cast of strangers.",
     },
     {
       title: "Say what we mean",

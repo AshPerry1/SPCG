@@ -6,9 +6,9 @@ export const site = {
   shortName: "SPCG",
   legalName: "SP CONSTRUCTION GROUP",
   owner: "Sam Patel",
-  tagline: "Alabama's trusted general contractor.",
+  tagline: "Alabama general contractor.",
   description:
-    "Licensed general contractor serving homeowners and businesses across Alabama. New builds, remodels, and commercial work — one team from bid to final walkthrough.",
+    "SP Construction Group handles new construction, remodels, and commercial build-outs statewide — one licensed team from site visit through final walkthrough.",
   phone: "(555) 000-0000",
   phoneHref: "tel:+15550000000",
   email: "hello@spconstructiongroup.com",
