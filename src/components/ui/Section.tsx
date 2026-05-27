@@ -5,8 +5,8 @@ type SectionProps = {
   children: ReactNode;
   className?: string;
   variant?: "default" | "surface" | "brand" | "dark";
-  /** Tighter vertical padding for bands and strips */
   compact?: boolean;
+  bleed?: boolean;
 };
 
 const variants = {
@@ -22,16 +22,17 @@ export function Section({
   className = "",
   variant = "default",
   compact = false,
+  bleed = false,
 }: SectionProps) {
-  const py = compact ? "py-12 sm:py-16" : "py-16 sm:py-24 lg:py-28";
+  const py = compact ? "py-14 sm:py-18" : "py-20 sm:py-28 lg:py-32";
+  const inner = bleed ? children : <div className={`container-site ${py}`}>{children}</div>;
+
   return (
     <section
       id={id}
-      className={`scroll-mt-20 sm:scroll-mt-24 ${variants[variant]} ${className}`}
+      className={`scroll-mt-[4.5rem] sm:scroll-mt-24 ${variants[variant]} ${className}`}
     >
-      <div className={`mx-auto max-w-6xl px-5 sm:px-6 lg:px-8 ${py}`}>
-        {children}
-      </div>
+      {inner}
     </section>
   );
 }
@@ -53,14 +54,13 @@ export function SectionHeader({
 }) {
   const alignClass = align === "center" ? "mx-auto text-center" : "text-left";
   const ruleAlign = align === "center" ? "mx-auto" : "";
-  const eyebrowColor = light ? "text-white/70" : "section-eyebrow";
-  const titleColor = light ? "text-white" : "text-foreground";
-  const descColor = light ? "text-white/80" : "text-muted";
 
   return (
     <header className={`max-w-2xl ${alignClass}`}>
       {eyebrow && (
-        <p className={eyebrowColor}>{eyebrow}</p>
+        <p className={light ? "section-eyebrow section-eyebrow-light" : "section-eyebrow"}>
+          {eyebrow}
+        </p>
       )}
       {showRule && eyebrow && (
         <span
@@ -69,12 +69,18 @@ export function SectionHeader({
         />
       )}
       <h2
-        className={`mt-5 text-balance font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-[2.75rem] ${titleColor}`}
+        className={`display-xl mt-6 text-balance text-3xl sm:text-4xl lg:text-[2.625rem] ${
+          light ? "text-white" : "text-foreground"
+        }`}
       >
         {title}
       </h2>
       {description && (
-        <p className={`mt-4 text-pretty text-base leading-relaxed sm:text-lg ${descColor}`}>
+        <p
+          className={`mt-5 text-pretty text-base leading-relaxed sm:text-lg ${
+            light ? "text-white/82" : "text-muted"
+          }`}
+        >
           {description}
         </p>
       )}

@@ -9,15 +9,15 @@ export function AboutSam() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-brand text-white">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.08),transparent_50%)]" />
+      <section className="border-b border-brand-dark/30 bg-brand text-white">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 sm:py-24 lg:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <Reveal>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+              <p className="section-eyebrow text-white/65">
                 About {site.owner}
               </p>
-              <h1 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+              <span className="section-rule section-rule-light mt-4 block" aria-hidden />
+              <h1 className="mt-5 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
                 {sam.name}
               </h1>
               <p className="mt-2 text-lg font-medium text-white/90">{sam.title}</p>
@@ -44,7 +44,7 @@ export function AboutSam() {
               </div>
             </Reveal>
             <Reveal delay={100}>
-              <div className="relative mx-auto aspect-[4/5] max-w-md overflow-hidden rounded-2xl shadow-2xl ring-2 ring-white/20 lg:max-w-none">
+              <div className="relative mx-auto aspect-[4/5] max-w-md overflow-hidden lg:max-w-none">
                 <SiteImage
                   asset={teamImages.sam}
                   className="absolute inset-0"
@@ -101,7 +101,7 @@ export function AboutSam() {
                 {sam.values.map((item, i) => (
                   <li
                     key={item.title}
-                    className="rounded-2xl bg-surface-elevated p-5 ring-1 ring-border"
+                    className="border border-border bg-surface-elevated p-5"
                   >
                     <p className="font-semibold text-foreground">{item.title}</p>
                     <p className="mt-2 text-sm leading-relaxed text-muted">
@@ -112,7 +112,7 @@ export function AboutSam() {
               </ul>
             </Reveal>
             <Reveal delay={80}>
-              <div className="rounded-2xl bg-surface-elevated p-6 ring-1 ring-border sm:p-8">
+              <div className="border border-border bg-surface-elevated p-6 sm:p-8">
                 <h3 className="text-lg font-semibold text-foreground">Credentials</h3>
                 <ul className="mt-4 space-y-3">
                   {sam.credentials.map((item) => (

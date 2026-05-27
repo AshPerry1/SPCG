@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
+import { publicAsset } from "@/lib/base-path";
 import type { ImageAsset } from "@/lib/images";
 
 type SiteImageProps = {
@@ -15,6 +16,11 @@ type SiteImageProps = {
   rounded?: string;
   overlay?: boolean;
 };
+
+function resolveSrc(path: string): string {
+  if (path.startsWith("http") || path.startsWith("//")) return path;
+  return publicAsset(path);
+}
 
 function ImageFallback({
   alt,
@@ -30,7 +36,7 @@ function ImageFallback({
       aria-label={alt}
     >
       <svg
-        className="h-10 w-10 text-brand/25"
+        className="h-10 w-10 text-brand/20"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -58,16 +64,22 @@ export function SiteImage({
   rounded = "rounded-sm",
   overlay = true,
 }: SiteImageProps) {
-  const [src, setSrc] = useState(asset.local);
+  const localSrc = useMemo(() => resolveSrc(asset.local), [asset.local]);
+  const fallbackSrc = useMemo(
+    () => (asset.fallback ? resolveSrc(asset.fallback) : localSrc),
+    [asset.fallback, localSrc],
+  );
+
+  const [src, setSrc] = useState(localSrc);
   const [failed, setFailed] = useState(false);
 
   const handleError = useCallback(() => {
-    if (asset.fallback && src !== asset.fallback) {
-      setSrc(asset.fallback);
+    if (src !== fallbackSrc) {
+      setSrc(fallbackSrc);
       return;
     }
     setFailed(true);
-  }, [asset.fallback, src]);
+  }, [fallbackSrc, src]);
 
   if (failed) {
     return (
@@ -87,13 +99,13 @@ export function SiteImage({
         sizes={sizes}
         priority={priority}
         onError={handleError}
-        className={`transition-transform duration-500 group-hover:scale-[1.02] ${imageClassName}`}
+        className={`transition-[transform,filter] duration-700 ease-out group-hover:scale-[1.015] ${imageClassName}`}
       />
       {overlay && (
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-dark/45 via-transparent to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-50" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-dark/55 via-brand-dark/5 to-transparent" />
       )}
       {showCaption && asset.caption && (
-        <figcaption className="absolute bottom-0 left-0 right-0 p-4 text-sm font-medium text-white">
+        <figcaption className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-brand-dark/40 px-4 py-3 text-xs font-medium tracking-wide text-white backdrop-blur-sm sm:text-sm">
           {asset.caption}
         </figcaption>
       )}
