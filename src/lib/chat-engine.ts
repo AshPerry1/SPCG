@@ -15,6 +15,13 @@ export type ChatMessage = {
   timestamp: number;
 };
 
+function uid(): string {
+  if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
+    return crypto.randomUUID();
+  }
+  return `msg-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+}
+
 const STOP_WORDS = new Set([
   "a",
   "an",
@@ -90,7 +97,7 @@ function pickBestEntry(message: string): KnowledgeEntry | null {
 function fallbackResponse(message: string): ChatMessage {
   const trimmed = message.trim();
   return {
-    id: crypto.randomUUID(),
+    id: uid(),
     role: "assistant",
     content: `I want to be straight with you — I don't have a verified answer for "${trimmed.slice(0, 80)}${trimmed.length > 80 ? "…" : ""}" in our official info.\n\n${assistant.disclaimer}\n\nBest next step: call ${site.phone} or use the contact form and ${site.owner}'s team will get back to you within one business day.`,
     suggestions: ["How do I get an estimate?", `Email ${site.email}`],
@@ -100,7 +107,7 @@ function fallbackResponse(message: string): ChatMessage {
 
 export function createGreeting(): ChatMessage {
   return {
-    id: crypto.randomUUID(),
+    id: uid(),
     role: "assistant",
     content: assistant.greeting,
     suggestions: [...quickReplies],
@@ -116,7 +123,7 @@ export function generateReply(userMessage: string): ChatMessage {
   }
 
   return {
-    id: crypto.randomUUID(),
+    id: uid(),
     role: "assistant",
     content: match.response,
     suggestions: match.suggestions,
@@ -133,7 +140,7 @@ export function typingDelayMs(text: string): number {
 
 export function createUserMessage(content: string): ChatMessage {
   return {
-    id: crypto.randomUUID(),
+    id: uid(),
     role: "user",
     content: content.trim(),
     timestamp: Date.now(),

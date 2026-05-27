@@ -238,7 +238,7 @@ export const sectionNudges: Record<
   services: {
     message:
       "Not sure which service matches your job? Tell me what you're planning — I'll keep it simple.",
-    suggestions: ["Do you serve my area?", "Residential vs commercial"],
+    suggestions: ["Do you serve my area?", "What services do you offer?"],
   },
   process: {
     message:
@@ -253,7 +253,7 @@ export const sectionNudges: Record<
   faq: {
     message:
       "Didn't see your question in the FAQ? Ask me here — I stick to what we publish officially.",
-    suggestions: quickReplies.slice(0, 2) as unknown as string[],
+    suggestions: ["How do I get an estimate?", "Are you licensed & insured?"],
   },
   projects: {
     message:

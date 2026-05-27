@@ -54,7 +54,7 @@ function TypingIndicator() {
         {[0, 1, 2].map((i) => (
           <span
             key={i}
-            className="h-2 w-2 animate-bounce rounded-full bg-brand/50"
+            className="chat-typing-dot h-2 w-2 rounded-full bg-brand/50"
             style={{ animationDelay: `${i * 0.15}s` }}
           />
         ))}
@@ -160,7 +160,7 @@ export function ChatWidget() {
       {/* Proactive nudge — subtle, dismissible */}
       {nudge && !open && (
         <div
-          className="fixed bottom-[5.5rem] left-4 right-4 z-[48] animate-in fade-in slide-in-from-bottom-2 sm:bottom-24 sm:left-auto sm:right-6 sm:max-w-sm"
+          className="fixed bottom-[5.5rem] left-4 right-4 z-[48] chat-nudge-enter sm:bottom-24 sm:left-auto sm:right-6 sm:max-w-sm"
           role="status"
           aria-live="polite"
         >
