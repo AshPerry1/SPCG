@@ -11,6 +11,7 @@ export const site = {
   phone: "(555) 000-0000",
   phoneHref: "tel:+15550000000",
   email: "hello@spconstructiongroup.com",
+  careersEmail: "careers@spconstructiongroup.com",
   serviceArea: "Serving all of Alabama",
   hours: "Mon–Fri, 7:00 AM – 5:00 PM",
   license: "Alabama General Contractor — license # coming soon",
@@ -22,7 +23,88 @@ export const navLinks = [
   { href: "#process", label: "How it works" },
   { href: "#projects", label: "Work" },
   { href: "#faq", label: "FAQ" },
+  { href: "#careers", label: "Careers" },
   { href: "#contact", label: "Contact" },
+] as const;
+
+export const openRoles = [
+  {
+    id: "estimator",
+    title: "Construction Estimator",
+    type: "Full-time",
+    location: "Alabama · Hybrid office & field",
+    summary:
+      "Prepare accurate bids for residential and commercial work — from takeoffs and vendor quotes to polished proposals owners can trust.",
+    highlights: [
+      "Review plans, specs, and site conditions for scope",
+      "Build detailed estimates with clear assumptions",
+      "Coordinate with Sam and field leads on pricing",
+    ],
+  },
+  {
+    id: "accountant",
+    title: "Staff Accountant",
+    type: "Full-time",
+    location: "Alabama · On-site or hybrid",
+    summary:
+      "Keep our books clean and projects profitable — job costing, AP/AR, payroll support, and reporting that helps leadership make decisions.",
+    highlights: [
+      "Job-cost tracking aligned to active projects",
+      "Vendor, subcontractor, and client billing support",
+      "Month-end reporting and document organization",
+    ],
+  },
+  {
+    id: "superintendent",
+    title: "Project Superintendent",
+    type: "Full-time",
+    location: "Alabama · Field-based",
+    summary:
+      "Run job sites day to day — schedule trades, uphold safety and quality, and keep homeowners and commercial clients informed.",
+    highlights: [
+      "Daily site leadership and subcontractor coordination",
+      "Quality checks, safety, and inspection readiness",
+      "Clear updates to the GC and project owners",
+    ],
+  },
+  {
+    id: "project-coordinator",
+    title: "Project Coordinator",
+    type: "Full-time",
+    location: "Alabama · Office",
+    summary:
+      "Support active builds behind the scenes — permits, schedules, purchase orders, and communication so nothing falls through the cracks.",
+    highlights: [
+      "Permit and inspection scheduling",
+      "Maintain project files, contacts, and timelines",
+      "Bridge between office, field, and clients",
+    ],
+  },
+  {
+    id: "skilled-labor",
+    title: "Skilled Carpenter / Lead Hand",
+    type: "Full-time",
+    location: "Alabama · Field",
+    summary:
+      "Hands-on role for experienced tradespeople who take pride in framing, finish work, and mentoring crew on residential and light commercial jobs.",
+    highlights: [
+      "Lead field crew on assigned scopes",
+      "Read plans and deliver code-compliant work",
+      "Reliable attendance and professional client interaction",
+    ],
+  },
+  {
+    id: "general",
+    title: "General Application",
+    type: "Open",
+    location: "Alabama",
+    summary:
+      "Don't see your role listed? Tell us what you bring — we're always meeting talented people who fit our culture and growth plans.",
+    highlights: [
+      "Operations, admin, sales, or field experience welcome",
+      "We'll keep your info on file for future openings",
+    ],
+  },
 ] as const;
 
 export const trustItems = [
