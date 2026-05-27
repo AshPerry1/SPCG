@@ -281,7 +281,7 @@ export const projects = [
     image: {
       local: "/images/projects/home-lakefront.jpg",
       fallback:
-        "https://images.unsplash.com/photo-1600585154340-be6162a9a2c9?auto=format&fit=crop&w=1400&q=80",
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&q=80",
       alt: "Custom lakefront home exterior",
     },
   },
@@ -305,7 +305,7 @@ export const projects = [
     image: {
       local: "/images/projects/whole-home.jpg",
       fallback:
-        "https://images.unsplash.com/photo-1556909114-f6e7ad7d4046?auto=format&fit=crop&w=1400&q=80",
+        "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1400",
       alt: "Renovated kitchen and living space",
     },
   },
@@ -357,7 +357,7 @@ export const testimonials = [
     image: {
       local: "/images/testimonials/client-1.jpg",
       fallback:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
+        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200",
       alt: "SPCG client",
     },
   },
@@ -370,7 +370,7 @@ export const testimonials = [
     image: {
       local: "/images/testimonials/client-2.jpg",
       fallback:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
+        "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200",
       alt: "SPCG commercial client",
     },
   },
