@@ -56,7 +56,7 @@ export const galleryImages = [
   {
     local: "/images/gallery/01-home-exterior.jpg",
     fallback:
-      "https://images.unsplash.com/photo-1600585154340-be6162a9a2c9?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
     alt: "Custom home exterior",
     caption: "Custom home · Residential",
     span: "large" as const,
@@ -64,7 +64,7 @@ export const galleryImages = [
   {
     local: "/images/gallery/02-kitchen.jpg",
     fallback:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d4046?auto=format&fit=crop&w=900&q=80",
+      "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=900",
     alt: "Kitchen remodel",
     caption: "Kitchen remodel",
     span: "tall" as const,
@@ -72,7 +72,7 @@ export const galleryImages = [
   {
     local: "/images/gallery/03-commercial.jpg",
     fallback:
-      "https://images.unsplash.com/photo-1486406146928-c627a92ad1ab?auto=format&fit=crop&w=900&q=80",
+      "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=900",
     alt: "Commercial build-out",
     caption: "Commercial build-out",
     span: "wide" as const,
@@ -96,7 +96,7 @@ export const galleryImages = [
   {
     local: "/images/gallery/06-site.jpg",
     fallback:
-      "https://images.unsplash.com/photo-1590644365607-1c45a8b80c99?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80",
     alt: "Active job site aerial view",
     caption: "Active job site",
     span: "large" as const,
@@ -107,13 +107,13 @@ export const onSiteStrip = [
   {
     local: "/images/site/01.jpg",
     fallback:
-      "https://images.unsplash.com/photo-1541972660-715d127a34ef?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80",
     alt: "Foundation work",
   },
   {
     local: "/images/site/02.jpg",
     fallback:
-      "https://images.unsplash.com/photo-1622467829734-5b14e68fe3f3?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80",
     alt: "Carpentry detail",
   },
   {
@@ -131,7 +131,7 @@ export const onSiteStrip = [
   {
     local: "/images/site/05.jpg",
     fallback:
-      "https://images.unsplash.com/photo-1595514534698-0e1fdf446c5a?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80",
     alt: "Roofing progress",
   },
 ] as const satisfies readonly ImageAsset[];
