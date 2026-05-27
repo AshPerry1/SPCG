@@ -4,9 +4,9 @@ import { SiteImage } from "@/components/ui/SiteImage";
 import { galleryImages } from "@/lib/images";
 
 const spanClass = {
-  large: "sm:col-span-2 sm:row-span-2",
-  tall: "sm:row-span-2",
-  wide: "sm:col-span-2",
+  large: "md:col-span-2 md:row-span-2",
+  tall: "md:row-span-2",
+  wide: "md:col-span-2",
   normal: "",
 } as const;
 
@@ -14,28 +14,28 @@ export function PhotoGallery() {
   return (
     <section
       id="gallery"
-      className="scroll-mt-20 bg-brand-dark py-16 sm:py-24 lg:py-28"
+      className="scroll-mt-[4.5rem] bg-brand-dark py-20 sm:py-28 lg:py-32 sm:scroll-mt-24"
     >
-      <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+      <div className="container-site">
         <SectionHeader
           eyebrow="Gallery"
           title="Work across Alabama."
-          description="Residential builds, commercial build-outs, and renovations — photographed on our job sites."
+          description="Custom homes, commercial build-outs, and renovations — photographed on our job sites."
           align="left"
           light
         />
       </div>
 
-      <ul className="mx-auto mt-12 grid max-w-6xl grid-cols-2 gap-2 px-5 sm:grid-cols-4 sm:auto-rows-[minmax(160px,1fr)] sm:gap-3 sm:px-6 lg:auto-rows-[minmax(190px,1fr)] lg:px-8">
+      <ul className="container-site mt-12 grid grid-cols-2 gap-1.5 sm:gap-2 md:grid-cols-4 md:auto-rows-[minmax(11rem,1fr)] lg:auto-rows-[minmax(13rem,1fr)]">
         {galleryImages.map((item, i) => (
           <Reveal key={item.local} delay={i * 40} className={spanClass[item.span]}>
-            <li className="relative min-h-[140px] list-none sm:min-h-0">
+            <li className="relative min-h-[9rem] list-none md:min-h-0">
               <SiteImage
                 asset={item}
                 className="absolute inset-0 h-full w-full"
-                sizes="(max-width: 640px) 50vw, 25vw"
+                sizes="(max-width: 768px) 50vw, 25vw"
                 showCaption
-                rounded="rounded-sm"
+                rounded="rounded-none"
               />
             </li>
           </Reveal>
