@@ -1,3 +1,5 @@
+import type { ImageAsset } from "@/lib/images";
+
 export const site = {
   name: "SP Construction Group",
   shortName: "SPCG",
@@ -16,6 +18,7 @@ export const site = {
 
 export const navLinks = [
   { href: "#services", label: "Services" },
+  { href: "#gallery", label: "Gallery" },
   { href: "#process", label: "How it works" },
   { href: "#projects", label: "Work" },
   { href: "#faq", label: "FAQ" },
@@ -29,71 +32,144 @@ export const trustItems = [
   { label: "Free estimates", detail: "Clear written bids" },
 ] as const;
 
-export const audiences = [
+type WithImage = { image: ImageAsset };
+
+export const audiences: (WithImage & {
+  title: string;
+  description: string;
+})[] = [
   {
     title: "Homeowners",
     description:
       "Custom homes, additions, kitchens, baths, and whole-home remodels with one contractor accountable for the entire job.",
+    image: {
+      local: "/images/audiences/homeowners.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1600585154340-be6162a9a2c9?auto=format&fit=crop&w=800&q=80",
+      alt: "Custom Alabama home",
+    },
   },
   {
     title: "Business owners",
     description:
       "Retail, office, and light industrial build-outs managed on schedule so you can open or expand on time.",
+    image: {
+      local: "/images/audiences/commercial.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+      alt: "Commercial interior build-out",
+    },
   },
   {
     title: "Developers & investors",
     description:
       "Reliable GC partner for multi-unit or commercial scopes — coordinated trades, permitting, and site supervision.",
+    image: {
+      local: "/images/audiences/developers.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1486406146928-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+      alt: "Multi-story commercial project",
+    },
   },
-] as const;
+];
 
-export const processSteps = [
+export const processSteps: (WithImage & {
+  step: string;
+  title: string;
+  description: string;
+})[] = [
   {
     step: "01",
     title: "Tell us about your project",
     description:
       "Call, email, or use the form below. Share your city, timeline, and what you want built or renovated.",
+    image: {
+      local: "/images/process/consult.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+      alt: "Planning a construction project",
+    },
   },
   {
     step: "02",
     title: "Site visit & written estimate",
     description:
       "We walk the property, answer your questions, and deliver a straightforward bid — no surprise line items.",
+    image: {
+      local: "/images/process/estimate.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
+      alt: "Site walkthrough and measurement",
+    },
   },
   {
     step: "03",
     title: "Build with one point of contact",
     description:
       "Sam oversees scheduling, subs, inspections, and updates until your project passes final walkthrough.",
+    image: {
+      local: "/images/process/build.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+      alt: "Active construction with crew on site",
+    },
   },
-] as const;
+];
 
-export const services = [
+export const services: (WithImage & {
+  title: string;
+  description: string;
+  icon: string;
+})[] = [
   {
     title: "General contracting",
     description:
       "Full oversight — bidding, permits, scheduling, and daily site management from mobilization to closeout.",
     icon: "clipboard",
+    image: {
+      local: "/images/services/general-contracting.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80",
+      alt: "General contractor overseeing a build",
+    },
   },
   {
     title: "Residential construction",
     description:
       "Custom homes, additions, and major remodels built to Alabama code with clear communication throughout.",
     icon: "building",
+    image: {
+      local: "/images/services/residential.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1600585154340-be6162a9a2c9?auto=format&fit=crop&w=900&q=80",
+      alt: "Residential home under construction",
+    },
   },
   {
     title: "Commercial projects",
     description:
       "Tenant improvements and build-outs delivered on schedule with minimal disruption to your operations.",
     icon: "briefcase",
+    image: {
+      local: "/images/services/commercial.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1486406146928-c627a92ad1ab?auto=format&fit=crop&w=900&q=80",
+      alt: "Commercial construction project",
+    },
   },
   {
     title: "Renovations & repairs",
     description:
       "Kitchens, baths, structural work, and insurance-related repairs handled by one accountable team.",
     icon: "hammer",
+    image: {
+      local: "/images/services/renovations.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1556909114-f6e7ad7d4046?auto=format&fit=crop&w=900&q=80",
+      alt: "Kitchen renovation in progress",
+    },
   },
-] as const;
+];
 
 export const whyChoose = [
   {
@@ -116,25 +192,105 @@ export const whyChoose = [
 
 export const projects = [
   {
-    title: "Custom home build",
+    title: "Lakefront custom home",
     category: "Residential",
-    location: "Alabama",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6162a9a2c9?auto=format&fit=crop&w=1200&q=80",
+    location: "Central Alabama",
+    year: "2025",
+    image: {
+      local: "/images/projects/home-lakefront.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1600585154340-be6162a9a2c9?auto=format&fit=crop&w=1400&q=80",
+      alt: "Custom lakefront home exterior",
+    },
   },
   {
-    title: "Commercial build-out",
+    title: "Retail build-out",
     category: "Commercial",
-    location: "Alabama",
-    image:
-      "https://images.unsplash.com/photo-1486406146928-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+    location: "Birmingham area",
+    year: "2024",
+    image: {
+      local: "/images/projects/retail-buildout.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80",
+      alt: "Retail space build-out",
+    },
   },
   {
     title: "Whole-home renovation",
     category: "Remodel",
-    location: "Alabama",
-    image:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d4046?auto=format&fit=crop&w=1200&q=80",
+    location: "Huntsville area",
+    year: "2024",
+    image: {
+      local: "/images/projects/whole-home.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1556909114-f6e7ad7d4046?auto=format&fit=crop&w=1400&q=80",
+      alt: "Renovated kitchen and living space",
+    },
+  },
+  {
+    title: "Office tenant improvement",
+    category: "Commercial",
+    location: "Montgomery area",
+    year: "2023",
+    image: {
+      local: "/images/projects/office-ti.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80",
+      alt: "Modern office interior",
+    },
+  },
+  {
+    title: "Addition & outdoor living",
+    category: "Residential",
+    location: "Mobile area",
+    year: "2023",
+    image: {
+      local: "/images/projects/addition.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80",
+      alt: "Home addition with covered patio",
+    },
+  },
+  {
+    title: "Storm damage restoration",
+    category: "Repair",
+    location: "Statewide",
+    year: "2024",
+    image: {
+      local: "/images/projects/restoration.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=80",
+      alt: "Structural repair and restoration",
+    },
+  },
+] as const;
+
+export const testimonials = [
+  {
+    quote:
+      "Sam kept us updated every week. The bid matched the final invoice — no surprises. Our addition was done before football season like he promised.",
+    name: "Jennifer M.",
+    role: "Homeowner",
+    location: "Birmingham, AL",
+    image: {
+      local: "/images/testimonials/client-1.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
+      alt: "SPCG client",
+    },
+  },
+  {
+    quote:
+      "We needed a retail space opened on a hard date. SPCG coordinated trades, passed inspection, and we were stocking shelves on schedule.",
+    name: "David R.",
+    role: "Business owner",
+    location: "Huntsville, AL",
+    image: {
+      local: "/images/testimonials/client-2.jpg",
+      fallback:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
+      alt: "SPCG commercial client",
+    },
   },
 ] as const;
 
