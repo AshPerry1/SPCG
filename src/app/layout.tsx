@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.description,
-  metadataBase: new URL("https://spconstructiongroup.com"),
+  metadataBase: new URL("https://ashperry1.github.io/SPCG"),
   openGraph: {
     title: site.name,
     description: site.description,

@@ -1,24 +1,26 @@
 # SP Construction Group (SPCG)
 
+## Live website
+
+**https://ashperry1.github.io/SPCG/**
+
+That link is the real site (hero, services, chat, contact form).  
+This README is only project notes — GitHub always shows it on the repo home page.
+
+The site rebuilds automatically on every push to `main` via GitHub Pages.
+
+---
+
 Marketing website for **SP Construction Group** — Sam Patel's Alabama general contracting business.
 
-Branding: forest green (`#1a4a38`) and white, with the SPCG logo (serif acronym + sans subline).
+**Branding:** forest green (`#1a4a38`) and white · SPCG logo (serif acronym + sans subline)
 
-## Getting started
+### Edit site content
 
-```bash
-npm install
-npm run dev
-```
+Update **`src/lib/site.ts`** (contact info, services, FAQ) and **`src/lib/chat-knowledge.ts`** (chat assistant answers).
 
-Open [http://localhost:3000](http://localhost:3000).
+Branding reference: `public/branding-reference.png`
 
-## Customize
+### Repository
 
-Edit **`src/lib/site.ts`** for contact info, services, and project gallery.
-
-Branding reference image: `public/branding-reference.png`
-
-## Deploy
-
-Push to [GitHub — AshPerry1/SPCG](https://github.com/AshPerry1/SPCG) and deploy on [Vercel](https://vercel.com).
+https://github.com/AshPerry1/SPCG
