@@ -3,19 +3,19 @@ name: Deploy site to GitHub Pages
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - "docs/**"
   workflow_dispatch:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,43 +35,31 @@ jobs:
         env:
           GITHUB_PAGES: "true"
 
-      - name: Verify static export
+      - name: Publish to gh-pages branch
         run: |
-          test -f out/index.html
-          test -f out/about/index.html
-          grep -q '/SPCG/_next/' out/index.html
-          grep -q '/SPCG/images/' out/index.html
+          cd out
+          touch .nojekyll
+          git init -q
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Deploy ${{ github.sha }}"
+          git branch -M gh-pages
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
 
-      - name: Sync build to docs/ (branch deploy fallback)
+      - name: Update docs/ on main (optional branch deploy)
+        working-directory: ${{ github.workspace }}
         run: |
-          rm -rf docs/*
+          rm -rf docs
+          mkdir -p docs
           cp -a out/. docs/
           touch docs/.nojekyll
 
-      - name: Commit docs/ if changed
+      - name: Commit docs folder
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/
-          if git diff --staged --quiet; then
-            echo "docs/ unchanged"
-          else
-            git commit -m "chore: update GitHub Pages build in docs/"
-            git push
-          fi
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          git diff --staged --quiet && exit 0
+          git commit -m "chore(pages): sync docs/ with latest build"
+          git push
