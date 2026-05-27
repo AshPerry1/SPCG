@@ -1,6 +1,6 @@
 # SPCG site images
 
-Drop your photos here using these folders. The site loads them automatically — no code changes needed.
+The site ships with photos in each folder below. Replace any file with the same filename to use your own shots — no code changes needed.
 
 | Folder | What to add |
 |--------|-------------|
