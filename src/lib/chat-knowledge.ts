@@ -258,7 +258,12 @@ export const sectionNudges: Record<
   projects: {
     message:
       "These are sample project types — ask if your scope is similar to what we take on.",
-    suggestions: ["What size projects do you take on?"],
+    suggestions: ["What size projects do you take on?", "How do I get an estimate?"],
+  },
+  about: {
+    message:
+      "Want to know more about Sam and how we run jobs? I'm happy to walk you through it.",
+    suggestions: ["Who is Sam Patel?", "How do I get an estimate?"],
   },
 };
 

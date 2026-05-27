@@ -4,7 +4,7 @@ import { site, trustItems } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-background">
+    <section id="hero" data-chat-section="hero" className="relative overflow-hidden bg-background">
       <div className="mx-auto max-w-6xl px-5 pt-10 pb-14 sm:px-6 sm:pt-16 sm:pb-20 lg:px-8 lg:pt-20">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="max-w-xl">
