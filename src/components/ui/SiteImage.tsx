@@ -84,7 +84,6 @@ export function SiteImage({
         priority={priority}
         onError={handleError}
         className={`transition-transform duration-700 group-hover:scale-[1.03] ${imageClassName}`}
-        {...(!fill ? { width: 800, height: 600 } : {})}
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-dark/50 via-transparent to-transparent opacity-60" />
       {showCaption && asset.caption && (
