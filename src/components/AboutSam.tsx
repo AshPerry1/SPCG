@@ -131,7 +131,7 @@ export function AboutSam() {
                   {sam.focusAreas.map((area) => (
                     <li
                       key={area}
-                      className="rounded-full bg-brand/8 px-3.5 py-1.5 text-sm font-medium text-brand"
+                      className="border border-brand/20 px-3.5 py-1.5 text-sm font-medium text-brand"
                     >
                       {area}
                     </li>
@@ -139,7 +139,7 @@ export function AboutSam() {
                 </ul>
               </div>
 
-              <div className="relative mt-6 aspect-[16/10] overflow-hidden rounded-2xl ring-1 ring-border">
+              <div className="relative mt-6 aspect-[16/10] overflow-hidden">
                 <SiteImage
                   asset={teamImages.crew}
                   className="absolute inset-0"
@@ -156,7 +156,7 @@ export function AboutSam() {
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <Reveal>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-border">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <SiteImage
                   asset={teamImages.branding}
                   className="absolute inset-0"
@@ -179,7 +179,7 @@ export function AboutSam() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href="/#contact" variant="primary" size="lg">
-                  Get a free estimate
+                  Request estimate
                 </Button>
                 <Button href="/" variant="secondary" size="lg">
                   Back to home
