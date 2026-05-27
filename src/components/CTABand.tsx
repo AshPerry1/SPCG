@@ -3,35 +3,39 @@ import { site } from "@/lib/site";
 
 export function CTABand() {
   return (
-    <section className="relative overflow-hidden bg-brand">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_80%_at_50%_120%,rgba(255,255,255,0.12),transparent)]" />
-      <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
-      <div className="relative mx-auto max-w-6xl px-5 py-16 text-center sm:px-6 sm:py-20 lg:px-8">
-        <h2 className="font-display text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
-          Ready to start your project?
-        </h2>
-        <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-white/85 sm:text-lg">
-          Tell us what you&apos;re building. We&apos;ll schedule a site visit and
-          send a clear written estimate.
-        </p>
-        <div className="mt-9 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-          <Button
-            href="#contact"
-            variant="secondary"
-            size="lg"
-            className="bg-white text-brand shadow-lg shadow-black/10 hover:bg-white/95"
-          >
-            Get a free estimate
-          </Button>
-          <Button
-            href={site.phoneHref}
-            variant="ghost"
-            size="lg"
-            external
-            className="text-white ring-1 ring-white/35 hover:bg-white/10"
-          >
-            Call {site.phone}
-          </Button>
+    <section className="border-y border-brand-dark/30 bg-brand">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-xl">
+            <p className="section-eyebrow text-white/65">Next step</p>
+            <span className="section-rule section-rule-light mt-4 block" aria-hidden />
+            <h2 className="mt-5 font-display text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
+              Tell us about your project.
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-white/80">
+              We will schedule a site visit and send a clear written estimate — residential,
+              commercial, or remodel.
+            </p>
+          </div>
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+            <Button
+              href="#contact"
+              variant="secondary"
+              size="lg"
+              className="w-full bg-white text-brand hover:bg-white/95 sm:w-auto"
+            >
+              Request estimate
+            </Button>
+            <Button
+              href={site.phoneHref}
+              variant="ghost"
+              size="lg"
+              external
+              className="w-full text-white ring-1 ring-white/30 hover:bg-white/10 sm:w-auto"
+            >
+              {site.phone}
+            </Button>
+          </div>
         </div>
       </div>
     </section>

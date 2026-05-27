@@ -12,23 +12,27 @@ const spanClass = {
 
 export function PhotoGallery() {
   return (
-    <Section id="gallery" variant="surface">
-      <SectionHeader
-        eyebrow="Project gallery"
-        title="Real work. Real job sites."
-        description="Residential builds, commercial build-outs, and renovations across Alabama — managed start to finish by one accountable team."
-        align="center"
-      />
+    <Section id="gallery" variant="dark" className="!px-0">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+        <SectionHeader
+          eyebrow="Gallery"
+          title="Work across Alabama."
+          description="Residential builds, commercial build-outs, and renovations — photographed on our job sites."
+          align="left"
+          light
+        />
+      </div>
 
-      <ul className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:auto-rows-[minmax(180px,1fr)] sm:gap-4 lg:auto-rows-[minmax(200px,1fr)]">
+      <ul className="mx-auto mt-12 grid max-w-6xl grid-cols-2 gap-2 px-5 sm:grid-cols-4 sm:auto-rows-[minmax(160px,1fr)] sm:gap-3 sm:px-6 lg:auto-rows-[minmax(190px,1fr)] lg:px-8">
         {galleryImages.map((item, i) => (
-          <Reveal key={item.local} delay={i * 50} className={spanClass[item.span]}>
-            <li className="relative h-full min-h-[160px] list-none">
+          <Reveal key={item.local} delay={i * 40} className={spanClass[item.span]}>
+            <li className="relative min-h-[140px] list-none sm:min-h-0">
               <SiteImage
                 asset={item}
-                className="absolute inset-0 h-full w-full shadow-md ring-1 ring-border/80"
+                className="absolute inset-0 h-full w-full"
                 sizes="(max-width: 640px) 50vw, 25vw"
                 showCaption
+                rounded="rounded-sm"
               />
             </li>
           </Reveal>
