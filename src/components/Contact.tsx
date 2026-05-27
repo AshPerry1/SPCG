@@ -72,7 +72,7 @@ export function Contact() {
         </div>
 
         <form
-          className="rounded-2xl bg-surface p-6 ring-1 ring-border sm:p-8 lg:col-span-3"
+          className="border border-border bg-surface p-6 sm:p-8 lg:col-span-3"
           action="#"
           method="post"
           aria-label="Project inquiry form"
