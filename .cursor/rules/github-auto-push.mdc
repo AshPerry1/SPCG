@@ -1,0 +1,18 @@
+---
+description: Always commit and push site changes to GitHub when editing this project
+alwaysApply: true
+---
+
+# GitHub auto-sync
+
+After making any code or content changes in this repository:
+
+1. Stage all relevant changes (`git add -A`).
+2. Commit with a clear, concise message describing what changed and why.
+3. Push to `origin` on the current branch (`git push origin HEAD`).
+
+Do not leave work only on disk. If push fails, tell the user immediately and include the error.
+
+Remote: `https://github.com/AshPerry1/SPCG.git`
+
+Project hooks in `.cursor/hooks.json` also debounce-commit-push after file edits and when the agent stops. Prefer explicit commit messages when you are the one editing; hooks use auto-sync messages as a backup.

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterFileEdit": [
+      {
+        "command": ".cursor/hooks/trigger-git-sync.sh"
+      }
+    ],
+    "stop": [
+      {
+        "command": ".cursor/hooks/trigger-git-sync.sh"
+      }
+    ]
+  }
+}
