@@ -2,35 +2,38 @@ import { SiteImage } from "@/components/ui/SiteImage";
 import { onSiteStrip } from "@/lib/images";
 
 export function OnTheJob() {
-  const strip = [...onSiteStrip, ...onSiteStrip];
-
   return (
     <section
-      className="overflow-hidden border-y border-brand-dark/20 bg-brand-dark py-4"
+      className="border-y border-border bg-surface py-10 sm:py-12"
       aria-label="On the job"
     >
-      <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
-        On the job across Alabama
-      </p>
-      <div className="relative">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-brand-dark to-transparent sm:w-24" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-brand-dark to-transparent sm:w-24" />
-        <div className="site-marquee flex w-max gap-3 px-3">
-          {strip.map((img, i) => (
-            <div
-              key={`${img.local}-${i}`}
-              className="relative h-32 w-52 shrink-0 overflow-hidden rounded-xl ring-1 ring-white/15 sm:h-36 sm:w-60"
-            >
+      <div className="container-site">
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="section-eyebrow">Field work</p>
+            <span className="section-rule mt-4 block" aria-hidden />
+            <p className="mt-4 max-w-md font-display text-xl font-bold text-foreground sm:text-2xl">
+              Active job sites across Alabama
+            </p>
+          </div>
+          <p className="text-sm text-muted sm:max-w-xs sm:text-right">
+            Every project gets daily site leadership — not a sales handoff to a stranger.
+          </p>
+        </div>
+
+        <ul className="mt-8 grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-5">
+          {onSiteStrip.map((img) => (
+            <li key={img.local} className="relative aspect-[3/2] list-none sm:aspect-[4/3]">
               <SiteImage
                 asset={img}
-                className="absolute inset-0"
-                sizes="240px"
-                rounded="rounded-xl"
+                className="absolute inset-0 h-full w-full"
+                sizes="(max-width: 640px) 45vw, 20vw"
+                rounded="rounded-sm"
                 overlay={false}
               />
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

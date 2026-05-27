@@ -4,7 +4,7 @@ import { type ReactNode } from "react";
 type ButtonProps = {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "secondary" | "ghost" | "outline-light";
+  variant?: "primary" | "secondary" | "ghost" | "accent";
   size?: "md" | "lg";
   className?: string;
   external?: boolean;
@@ -12,13 +12,13 @@ type ButtonProps = {
 
 const variants = {
   primary:
-    "bg-brand text-white hover:bg-brand-light active:bg-brand-dark shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_8px_rgba(26,74,56,0.25)]",
+    "bg-brand text-white hover:bg-brand-light active:bg-brand-dark shadow-[0_1px_0_rgba(255,255,255,0.12)_inset]",
   secondary:
-    "bg-surface-elevated text-foreground ring-1 ring-border hover:ring-border-strong hover:bg-surface active:bg-surface",
+    "bg-surface-elevated text-brand ring-1 ring-border hover:ring-border-strong hover:bg-background",
   ghost:
     "bg-transparent text-brand hover:bg-brand/6 active:bg-brand/10",
-  "outline-light":
-    "bg-transparent text-white ring-1 ring-white/35 hover:bg-white/10 active:bg-white/15",
+  accent:
+    "bg-accent text-brand-dark hover:bg-accent-muted active:opacity-95",
 };
 
 const sizes = {
@@ -34,7 +34,25 @@ export function Button({
   className = "",
   external,
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center rounded-sm font-semibold transition-[background,box-shadow,transform] duration-200 active:scale-[0.99] ${variants[variant]} ${sizes[size]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 ${variants[variant]} ${sizes[size]} ${className}`;
+
+  const content = (
+    <>
+      {children}
+      {variant === "primary" && size === "lg" && (
+        <svg
+          className="h-4 w-4 opacity-80"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+          aria-hidden
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      )}
+    </>
+  );
 
   if (
     external ||
@@ -44,14 +62,14 @@ export function Button({
   ) {
     return (
       <a href={href} className={classes}>
-        {children}
+        {content}
       </a>
     );
   }
 
   return (
     <Link href={href} className={classes}>
-      {children}
+      {content}
     </Link>
   );
 }

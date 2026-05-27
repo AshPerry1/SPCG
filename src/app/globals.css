@@ -215,3 +215,11 @@ body {
 .chat-typing-dot {
   animation: chat-typing-dot 1s ease-in-out infinite;
 }
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.shadow-elevated {
+  box-shadow: var(--shadow-elevated);
+}

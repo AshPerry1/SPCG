@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Libre_Baskerville } from "next/font/google";
+import { Libre_Baskerville, Source_Sans_3 } from "next/font/google";
 import { ChatLoader } from "@/components/chat/ChatLoader";
 import "./globals.css";
 import { site } from "@/lib/site";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const sourceSans = Source_Sans_3({
+  variable: "--font-source-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -13,7 +13,7 @@ const dmSans = DM_Sans({
 const libreBaskerville = Libre_Baskerville({
   variable: "--font-libre-baskerville",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["700"],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#1a4a38",
+  themeColor: "#0f2e24",
 };
 
 export default function RootLayout({
@@ -45,12 +45,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${libreBaskerville.variable} h-full`}
+      className={`${sourceSans.variable} ${libreBaskerville.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col font-sans text-foreground antialiased">
+      <body className="site-grain min-h-full flex flex-col font-sans text-foreground antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-brand focus:px-4 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-brand focus:px-4 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-white"
         >
           Skip to content
         </a>
