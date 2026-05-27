@@ -1,26 +1,26 @@
 # SP Construction Group (SPCG)
 
-## Live website
+## 🌐 Live website (open this — not the text below)
 
-**https://ashperry1.github.io/SPCG/**
+### **https://ashperry1.github.io/SPCG/**
 
-That link is the real site (hero, services, chat, contact form).  
-This README is only project notes — GitHub always shows it on the repo home page.
-
-The site rebuilds automatically on every push to `main` via GitHub Pages.
+The link above is Sam’s construction company website.  
+You are reading the **repo README** right now — GitHub always shows this on the code tab. It is **not** the website.
 
 ---
 
-Marketing website for **SP Construction Group** — Sam Patel's Alabama general contracting business.
+**One-time setup (repo owner):** GitHub → **Settings** → **Pages** → **Build and deployment** → Source: **Deploy from a branch** → Branch: **`gh-pages`** → **`/ (root)`** → Save.
 
-**Branding:** forest green (`#1a4a38`) and white · SPCG logo (serif acronym + sans subline)
+After every push to `main`, GitHub Actions rebuilds and updates the live site automatically.
 
-### Edit site content
+---
 
-Update **`src/lib/site.ts`** (contact info, services, FAQ) and **`src/lib/chat-knowledge.ts`** (chat assistant answers).
+Marketing site for **SP Construction Group** — Alabama general contractor (Sam Patel).
 
-Branding reference: `public/branding-reference.png`
+| Edit | File |
+|------|------|
+| Contact, services, FAQ | `src/lib/site.ts` |
+| Chat assistant answers | `src/lib/chat-knowledge.ts` |
+| Branding reference image | `public/branding-reference.png` |
 
-### Repository
-
-https://github.com/AshPerry1/SPCG
+Repo: https://github.com/AshPerry1/SPCG
