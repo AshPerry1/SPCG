@@ -4,13 +4,16 @@ type SectionProps = {
   id?: string;
   children: ReactNode;
   className?: string;
-  variant?: "default" | "surface" | "brand";
+  variant?: "default" | "surface" | "brand" | "dark";
+  /** Tighter vertical padding for bands and strips */
+  compact?: boolean;
 };
 
 const variants = {
   default: "bg-background",
   surface: "bg-surface",
   brand: "bg-brand text-white",
+  dark: "bg-brand-dark text-white",
 };
 
 export function Section({
@@ -18,13 +21,15 @@ export function Section({
   children,
   className = "",
   variant = "default",
+  compact = false,
 }: SectionProps) {
+  const py = compact ? "py-12 sm:py-16" : "py-16 sm:py-24 lg:py-28";
   return (
     <section
       id={id}
       className={`scroll-mt-20 sm:scroll-mt-24 ${variants[variant]} ${className}`}
     >
-      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <div className={`mx-auto max-w-6xl px-5 sm:px-6 lg:px-8 ${py}`}>
         {children}
       </div>
     </section>
@@ -37,29 +42,34 @@ export function SectionHeader({
   description,
   align = "center",
   light = false,
+  showRule = true,
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
   align?: "center" | "left";
   light?: boolean;
+  showRule?: boolean;
 }) {
   const alignClass = align === "center" ? "mx-auto text-center" : "text-left";
-  const eyebrowColor = light ? "text-white/70" : "text-brand";
+  const ruleAlign = align === "center" ? "mx-auto" : "";
+  const eyebrowColor = light ? "text-white/70" : "section-eyebrow";
   const titleColor = light ? "text-white" : "text-foreground";
   const descColor = light ? "text-white/80" : "text-muted";
 
   return (
     <header className={`max-w-2xl ${alignClass}`}>
       {eyebrow && (
-        <p
-          className={`text-xs font-semibold uppercase tracking-[0.2em] ${eyebrowColor}`}
-        >
-          {eyebrow}
-        </p>
+        <p className={eyebrowColor}>{eyebrow}</p>
+      )}
+      {showRule && eyebrow && (
+        <span
+          className={`section-rule mt-4 block ${ruleAlign} ${light ? "section-rule-light" : ""}`}
+          aria-hidden
+        />
       )}
       <h2
-        className={`mt-3 text-balance font-display text-3xl font-bold tracking-tight sm:text-4xl ${titleColor}`}
+        className={`mt-5 text-balance font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-[2.75rem] ${titleColor}`}
       >
         {title}
       </h2>
