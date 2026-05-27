@@ -5,7 +5,7 @@ Drop your photos here using these folders. The site loads them automatically —
 | Folder | What to add |
 |--------|-------------|
 | `hero/` | Main hero, truck, framing shots |
-| `team/` | Sam portrait, crew photo, branding |
+| `team/` | **sam-patel.jpg** (About page portrait), crew photo, branding |
 | `gallery/` | `01`–`06` project highlights (see `src/lib/images.ts`) |
 | `site/` | On-the-job strip photos `01`–`05` |
 | `projects/` | Portfolio cards |
