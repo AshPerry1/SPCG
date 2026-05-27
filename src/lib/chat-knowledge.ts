@@ -255,9 +255,14 @@ export const sectionNudges: Record<
       "Didn't see your question in the FAQ? Ask me here — I stick to what we publish officially.",
     suggestions: ["How do I get an estimate?", "Are you licensed & insured?"],
   },
+  gallery: {
+    message:
+      "Browse our project gallery for residential, commercial, and remodel work — or ask if your project is similar.",
+    suggestions: ["What services do you offer?", "How do I get an estimate?"],
+  },
   projects: {
     message:
-      "These are sample project types — ask if your scope is similar to what we take on.",
+      "See featured projects and our full portfolio section — ask if your scope is similar to what we take on.",
     suggestions: ["What size projects do you take on?", "How do I get an estimate?"],
   },
   about: {
