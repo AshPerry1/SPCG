@@ -8,7 +8,9 @@ export function OnTheJob() {
       aria-label="On the job"
     >
       <div className="site-container mb-4 flex items-end justify-between gap-4">
-        <p className="section-eyebrow text-accent">On the job</p>
+        <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.24em] text-accent">
+          On the job
+        </p>
         <p className="text-xs text-white/50">Swipe to view</p>
       </div>
       <div className="site-strip px-5 sm:px-6 lg:px-[max(1.25rem,calc((100vw-76rem)/2+2rem))]">

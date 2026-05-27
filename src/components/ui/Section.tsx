@@ -25,7 +25,7 @@ export function Section({
   compact = false,
   bleed = false,
 }: SectionProps) {
-  const py = compact ? "py-14 sm:py-18" : "py-20 sm:py-28 lg:py-32";
+  const py = compact ? "py-14 sm:py-16" : "py-20 sm:py-28 lg:py-32";
 
   return (
     <section
